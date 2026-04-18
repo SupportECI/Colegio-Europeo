@@ -1,0 +1,29 @@
+/* Navbar Animations */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar-popover-enter {
+  animation: slideDown 0.3s ease-out;
+}
+
+.navbar-link-hover {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}

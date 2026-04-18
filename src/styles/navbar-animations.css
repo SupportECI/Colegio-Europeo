@@ -1,0 +1,133 @@
+/* Ghost-like Popover Animations */
+@keyframes popoverGhostIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-8px);
+    filter: blur(4px);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes popoverGhostOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-8px);
+    filter: blur(4px);
+  }
+}
+
+/* Smooth item entrance */
+@keyframes itemFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Premium glow effect on hover */
+.popover-item-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.popover-item-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.popover-item-hover:hover::before {
+  left: 100%;
+}
+
+/* Chevron rotation animation */
+.chevron-rotate {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevron-rotate.open {
+  transform: rotate(180deg);
+}
+
+/* Staggered animation for list items */
+.disclosure-item {
+  animation: itemFadeSlide 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.disclosure-item:nth-child(1) { animation-delay: 0.05s; }
+.disclosure-item:nth-child(2) { animation-delay: 0.1s; }
+.disclosure-item:nth-child(3) { animation-delay: 0.15s; }
+
+/* Premium shadow on popover */
+.popover-premium-shadow {
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+.nav-link-premium {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-premium:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Glassmorphism effect for dropdowns */
+.dropdown-glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button scale animation */
+.button-scale-hover {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.button-scale-hover:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 12px 24px -8px rgba(79, 70, 229, 0.4);
+}
