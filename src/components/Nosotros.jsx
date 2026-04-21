@@ -24,7 +24,7 @@ const features = [
     bgColor: 'bg-indigo-50'
   },
   { 
-    name: 'Comedor Incluido', 
+    name: 'Comedor', 
     description: 'Alimentación balanceada y nutritiva incluida en la colegiatura mensual.', 
     icon: <Utensils className="h-6 w-6 text-orange-600" />,
     bgColor: 'bg-orange-50'
@@ -42,7 +42,7 @@ const features = [
     bgColor: 'bg-red-50'
   },
   { 
-    name: 'Artes, Música y Danza', 
+    name: 'Artes y Danza', 
     description: 'Desarrollo de habilidades artísticas y culturales como parte de la formación.', 
     icon: <Palette className="h-6 w-6 text-purple-600" />,
     bgColor: 'bg-purple-50'

@@ -117,3 +117,7 @@ textarea:focus {
 .swal2-popup .swal2-loader::after {
   background: #0E2976 !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}

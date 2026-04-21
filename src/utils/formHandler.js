@@ -87,7 +87,6 @@ export const limpiarFormulario = (setFormData, setErrors) => {
     apellido: "",
     email: "",
     telefono: "",
-    idioma: "",
     nivel: "",
     disponibilidad: "",
     terminos: false,

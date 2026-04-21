@@ -22,18 +22,18 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative bg-white overflow-hidden pt-16 md:pt-20 pb-16 md:pb-24 hero-form-section">
+    <section className="relative bg-white overflow-hidden pt-16 md:pt-15 pb-16 md:pb-24 hero-form-section">
       {/* Fondos decorativos */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 opacity-60" style={{ backgroundColor: 'rgba(14, 41, 118, 0.1)' }}></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl -z-10 opacity-40" style={{ backgroundColor: 'rgba(14, 41, 118, 0.05)' }}></div>
 
       {/* Contenedor Principal */}
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* Grid Principal: Contenido + Formulario */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-30 items-start">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        {/* En móviles: Solo formulario. En escritorio: Grid con contenido + formulario */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-30 items-start">
           
-          {/* COLUMNA IZQUIERDA: CONTENIDO HERO */}
-          <div className="lg:col-span-6 space-y-6 flex flex-col justify-center">
+          {/* COLUMNA IZQUIERDA: CONTENIDO HERO (Hidden en móviles) */}
+          <div className="hidden lg:flex lg:col-span-6 space-y-6 flex-col justify-center">
 
             {/* Título Principal */}
             <div className="space-y-3">
@@ -50,7 +50,7 @@ const Hero = () => {
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}
@@ -80,12 +80,12 @@ const Hero = () => {
                 <p className="text-xs text-gray-400 mt-0.5">Educados con excelencia</p>
               </div>
               <div className="text-center md:text-left">
-                <p className="text-2xl md:text-3xl font-bold" style={{ color: '#0E2976' }}>4</p>
+                <p className="text-2xl md:text-3xl font-bold" style={{ color: '#0E2976' }}>3</p>
                 <p className="text-xs md:text-sm text-gray-600 font-medium">Niveles educativos</p>
-                <p className="text-xs text-gray-400 mt-0.5">Lactantes a Primaria</p>
+                <p className="text-xs text-gray-400 mt-0.5">Maternal a Primaria</p>
               </div>
               <div className="text-center md:text-left">
-                <p className="text-2xl md:text-3xl font-bold" style={{ color: '#0E2976' }}>20</p>
+                <p className="text-2xl md:text-3xl font-bold" style={{ color: '#0E2976' }}>10</p>
                 <p className="text-xs md:text-sm text-gray-600 font-medium">Años en educación</p>
                 <p className="text-xs text-gray-400 mt-0.5">Trayectoria de calidad</p>
               </div>
@@ -93,8 +93,8 @@ const Hero = () => {
           </div>
 
           {/* COLUMNA DERECHA: FORMULARIO */}
-          <div className="lg:col-span-6">
-            <div className="sticky top-32">
+          <div className="w-full lg:col-span-6">
+            <div className="lg:sticky lg:top-32">
               <HeroForm />
             </div>
           </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import {
   MapPin,
   Phone,
@@ -62,14 +62,14 @@ export default function Footer() {
         >
           {/* INFO COLEGIO */}
           <motion.div variants={itemVariants}>
-            <div className="mb-6">
+            <div className="mb-6 ">
               <img 
-                src="../assets/images/logo.svg"
-                width={140} 
+                src="./src/assets/images/Logo-Footer.svg"
+                width={200} 
+                className="-mt-3"
                 alt="Logo Centro Educativo Europeo" 
-                className="brightness-0 invert" 
               />
-              <p className="text-sm text-white/70 mt-5 leading-relaxed">
+              <p className="text-sm text-white/70 mt-1 leading-relaxed">
                 Formando líderes con valores, excelencia académica y un sistema bilingüe integral desde hace más de 20 años en Chiapas.
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white hover:text-[#0E2976] transition"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#C32945] hover:text-white transition"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -166,13 +166,13 @@ export default function Footer() {
           >
             <p>© {new Date().getFullYear()} Centro Educativo Europeo. Todos los derechos reservados.</p>
             <div className="flex gap-4">
-              <button 
+              <button id='terminos' 
                 onClick={() => setModalType('terminos')} 
                 className="hover:text-white transition underline underline-offset-4"
               >
                 Términos y Condiciones
               </button>
-              <button 
+              <button id='privacidad'
                 onClick={() => setModalType('privacidad')} 
                 className="hover:text-white transition underline underline-offset-4"
               >
@@ -186,7 +186,7 @@ export default function Footer() {
       {/* MODAL SYSTEM */}
       <AnimatePresence>
         {modalType && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             {/* Overlay */}
             <motion.div 
               initial={{ opacity: 0 }}

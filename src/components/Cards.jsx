@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   X,
   CheckCircle2,
@@ -15,7 +16,7 @@ import {
   Languages,
   Activity
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const posts = [
   {
@@ -93,7 +94,7 @@ export default function NivelesEducativos() {
   const [selectedPost, setSelectedPost] = useState(null);
 
   return (
-    <div id="niveles" className="bg-white py-10 px-4 sm:px-6 lg:px-8">
+    <div id="niveles" className="scroll-mt-45 bg-white py-10 px-4 sm:px-6 lg:px-8" id="niveles">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center lg:text-left">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
@@ -167,7 +168,7 @@ export default function NivelesEducativos() {
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
-              className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto rounded-t-[2rem] sm:rounded-3xl bg-white p-6 sm:p-8 shadow-2xl no-scrollbar"
+              className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto rounded-t-4xl sm:rounded-3xl bg-white p-6 sm:p-8 shadow-2xl no-scrollbar"
             >
               {/* Botón cerrar más grande para pulgares en móvil */}
               <button onClick={() => setSelectedPost(null)} className="absolute right-4 top-4 p-2 text-gray-400 hover:text-gray-600 focus:outline-none">
@@ -239,7 +240,7 @@ export default function NivelesEducativos() {
                   className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c51c1c] py-4 text-sm sm:text-base text-white font-bold shadow-lg transition-transform active:scale-95"
                 >
                   <MessageCircle className="h-5 w-5" />
-                  WhatsApp
+                  Más información
                 </a>
               </div>
             </motion.div>

@@ -1,13 +1,13 @@
 import { MapPin, Navigation, ShieldCheck, Clock, School, ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
+// Ubicación component
 
 export default function UbicacionColegio() {
   return (
-    <section className="w-full py-20 bg-white">
+    <section className="scroll-mt-35 w-full py-20 bg-white" id="ubicacion">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Título y Subtítulo Proporcionados */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600 mb-2 block">
             Ubicación Estratégica
           </span>
@@ -23,16 +23,13 @@ export default function UbicacionColegio() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* Imagen con Badge de Ubicación Real */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <div 
             className="relative"
           >
             <img
               src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1122&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Instalaciones Centro Educativo Europeo"
-              className="rounded-[2.5rem] shadow-2xl shadow-slate-200 object-cover w-full h-[380px] border-4 border-white"
+              className="rounded-[2.5rem] shadow-2xl shadow-slate-200 object-cover w-full h-95 border-4 border-white"
             />
 
             {/* Badge Flotante Compacto */}
@@ -45,13 +42,11 @@ export default function UbicacionColegio() {
                 <p className="text-xs font-bold text-slate-800">Tuxtla Gutiérrez, Chiapas</p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Información Detallada basada en la imagen de referencia */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <div
+            className="flex flex-col h-full justify-center"
           >
             <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <School className="text-blue-600" size={24} />
@@ -122,7 +117,7 @@ export default function UbicacionColegio() {
               </a>
             </div>
 
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

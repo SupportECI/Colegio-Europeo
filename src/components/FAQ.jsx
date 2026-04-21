@@ -94,7 +94,7 @@ export default function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="py-6 px-8 pl-[4.5rem]"> 
+                    <div className="py-6 px-8 pl-18"> 
                       <p className="text-[15px] text-gray-700 leading-relaxed font-normal">
                         {item.respuesta}
                       </p>

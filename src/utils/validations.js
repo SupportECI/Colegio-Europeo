@@ -94,7 +94,6 @@ export const validarFormulario = (formData) => {
     apellido: validarApellido,
     email: validarEmail,
     telefono: validarTelefono,
-    idioma: validarIdioma,
     nivel: validarNivel,
     disponibilidad: validarDisponibilidad,
     terminos: validarTerminos,
