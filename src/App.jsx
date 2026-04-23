@@ -6,6 +6,7 @@ import AboutUs from './components/About'
 import Cards from './components/Cards'
 import Info from './components/Info'
 import Desarrollo from './components/Desarrollo'
+import Experiencias from './components/Experiencias'
 import Galeria from './components/Galeria'
 import Ubicacion from './components/Ubicacion'
 import FAQ from './components/FAQ'
@@ -23,6 +24,8 @@ function App() {
       // Cambiar vista según el hash
       if (hash === '#galeria') {
         setVistaActiva('galeria');
+      } else if (hash === '#experiencias') {
+        setVistaActiva('experiencias');
       } else {
         setVistaActiva('inicio');
       }
@@ -60,8 +63,16 @@ function App() {
           <FAQ />
           <WhatsAppButton />
         </>
+      ) : vistaActiva === 'experiencias' ? (
+        <>
+          <Experiencias />
+          <WhatsAppButton />
+        </>
       ) : (
-        <Galeria />
+        <>
+          <Galeria />
+          <WhatsAppButton />
+        </>
       )}
       
       <Footer />

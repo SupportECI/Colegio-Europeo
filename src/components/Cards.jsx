@@ -40,7 +40,7 @@ const posts = [
     benefits: ["Desarrollo de lenguaje bilingüe", "Motricidad fina y gruesa", "Estimulación de la creatividad", "Control de esfínteres", "Socialización temprana", "Rutinas y hábitos saludables"],
     includes: ["Material didáctico manipulativo", "Clases de música y movimiento", "Área de juegos y exploración", "Comedor con menú balanceado", "Evaluación de desarrollo", "Talleres para padres"],
     stats: { schedule: "7:00 - 15:00", capacity: "Máx. 15", cycle: "2025-2026" },
-    imageUrl: "https://images.unsplash.com/photo-1639091738016-9a701f5d4eac?q=80&w=1173&auto=format&fit=crop",
+    imageUrl: "./src/assets/images/Maternal-1.jpg",
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ const posts = [
     benefits: ["Programa bilingüe certificado", "Lectoescritura en ambos idiomas", "Pensamiento matemático y lógico", "Educación socioemocional", "Preparación para primaria", "Habilidades artísticas y deportivas"],
     includes: ["Libros y materiales didácticos", "Clases de inglés diarias", "Educación física y danza", "Talleres de ciencia y tecnología", "Comedor supervisado", "Eventos culturales y deportivos"],
     stats: { schedule: "7:00 - 14:00", capacity: "Máx. 20", cycle: "2025-2026" },
-    imageUrl: "https://images.unsplash.com/photo-1587323655395-b1c77a12c89a?q=80&w=1170&auto=format&fit=crop",
+    imageUrl: "./src/assets/images/Presscolar1.jpg",
   },
   {
     id: 3,
@@ -86,7 +86,7 @@ const posts = [
     benefits: ["Programa bilingüe de alto nivel", "Certificaciones Cambridge", "Pensamiento crítico y creativo", "Uso de tecnología educativa", "Formación en valores", "Preparación para secundaria"],
     includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Laboratorio de ciencias", "Educación física y artes", "Robótica y programación", "Actividades extraescolares"],
     stats: { schedule: "7:00 - 14:30", capacity: "Máx. 25", cycle: "2025-2026" },
-    imageUrl: "https://images.unsplash.com/photo-1709149538569-294a008a214d?q=80&w=1171&auto=format&fit=crop",
+    imageUrl: "./src/assets/images/Primaria1.jpg",
   },
 ];
 
@@ -236,6 +236,7 @@ export default function NivelesEducativos() {
 
               <div className="mt-8 mb-2 sm:mb-0">
                 <a 
+                  target="_blank"
                   href="https://wa.me/tunumerowhatsapp" 
                   className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c51c1c] py-4 text-sm sm:text-base text-white font-bold shadow-lg transition-transform active:scale-95"
                 >

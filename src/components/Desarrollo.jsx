@@ -11,7 +11,7 @@ const pilares = [
       bg: "bg-blue-50",
       text: "text-blue-600",
     },
-    imageUrl: "https://images.unsplash.com/photo-1759678444821-565ff103465c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    imageUrl: "./src/assets/images/Desarrollo-cognitivo.jpg", 
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const pilares = [
       bg: "bg-orange-50",
       text: "text-orange-600",
     },
-    imageUrl: "https://plus.unsplash.com/premium_photo-1738663458197-8a40da32fe94?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    imageUrl: "./src/assets/images/Desarrollo-emocional.jpg", 
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const pilares = [
       bg: "bg-emerald-50",
       text: "text-emerald-600",
     },
-    imageUrl: "https://plus.unsplash.com/premium_photo-1723921211447-be941c04b756?q=80&w=1146&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    imageUrl: "./src/assets/images/Desarrollo-social.jpg", 
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const pilares = [
       bg: "bg-purple-50",
       text: "text-purple-600",
     },
-    imageUrl: "https://images.unsplash.com/photo-1769515370431-bd2f3da8ba38?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    imageUrl: "./src/assets/images/Desarrollo-fisico.jpg", 
   },
 ];
 
