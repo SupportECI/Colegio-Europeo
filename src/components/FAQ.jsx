@@ -36,7 +36,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="w-full py-20 bg-gray-50/50">
+    <section className="w-full py-20 bg-gray-50/50" id="faq">
       <div className="max-w-4xl mx-auto px-6">
         
         {/* Header Elegante */}

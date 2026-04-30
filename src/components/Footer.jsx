@@ -9,7 +9,7 @@ import {
   Facebook,
   Instagram,
   Youtube,
-  MessageCircle,
+  BriefcaseBusiness,
   X,
 } from 'lucide-react'
 
@@ -36,8 +36,36 @@ const itemVariants = {
   },
 }
 
+const nivelesLinks = [
+  { label: 'Maternal',             href: '#niveles' },
+  { label: 'Preescolar',           href: '#niveles' },
+  { label: 'Primaria',             href: '#niveles' },
+  { label: 'Sistema Bilingüe',     href: '#sistema' }
+]
+
+const institucionLinks = [
+  { label: 'Sobre Nosotros',       href: '#nosotros' },
+  { label: 'Modelo Educativo',     href: '#formacion-integral' },
+  { label: 'Admisiones',           href: '#' },
+  { label: 'Preguntas Frecuentes', href: '#faq' },
+]
+
+const avisosLinks = [
+  { label: 'Reglamento Escolar',   href: '/reglamento' },
+  { label: 'Costos y Pagos',       href: '/costos' },
+  { label: 'Plataforma Educativa', href: '/plataforma' },
+  { label: 'Circular de Padres',   href: '/circulares' },
+]
+
+const socialLinks = [
+  { Icon: Facebook,      href: 'https://facebook.com/tuPagina' },
+  { Icon: Instagram,     href: 'https://instagram.com/tuPagina' },
+  { Icon: Youtube,       href: 'https://youtube.com/tuCanal' },
+  { Icon: BriefcaseBusiness, href: 'https://wa.me/529611234567' },
+]
+
 export default function Footer() {
-  const [modalType, setModalType] = useState(null) // 'privacidad' | 'terminos  y c' | null
+  const [modalType, setModalType] = useState(null)
 
   const modalContent = {
     privacidad: {
@@ -64,7 +92,7 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <div className="mb-6 ">
               <img 
-                src="./src/assets/images/Logo-Footer.svg"
+                src="/src/assets/images/Logo-Footer.svg"
                 width={200} 
                 className="-mt-3"
                 alt="Logo Centro Educativo Europeo" 
@@ -98,11 +126,13 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-3 mt-6">
-              {[Facebook, Instagram, Youtube, MessageCircle].map((Icon, i) => (
+              {socialLinks.map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#C32945] hover:text-white transition"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-[#C32945] transition"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
@@ -116,9 +146,11 @@ export default function Footer() {
               Nuestros Niveles
             </h4>
             <ul className="space-y-4">
-              {['Maternal', 'Preescolar', 'Primaria', 'Sistema Bilingüe', 'Talleres Vespertinos'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-white/70 hover:text-white transition">{item}</a>
+              {nivelesLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm text-white/70 hover:text-white transition">
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -130,9 +162,11 @@ export default function Footer() {
               Institución
             </h4>
             <ul className="space-y-4">
-              {['Sobre Nosotros', 'Modelo Educativo', 'Admisiones', 'Calendario Escolar', 'Preguntas Frecuentes', 'Bolsa de Trabajo'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-white/70 hover:text-white transition">{item}</a>
+              {institucionLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm text-white/70 hover:text-white transition">
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -144,14 +178,11 @@ export default function Footer() {
               Avisos y Legal
             </h4>
             <ul className="space-y-4">
-              <li>
-                <button onClick={() => setModalType('privacidad')} className="text-sm text-white/70 hover:text-white transition">
-                  Aviso de Privacidad
-                </button>
-              </li>
-              {['Reglamento Escolar', 'Costos y Pagos', 'Plataforma Educativa', 'Circular de Padres'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm text-white/70 hover:text-white transition">{item}</a>
+              {avisosLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm text-white/70 hover:text-white transition">
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>

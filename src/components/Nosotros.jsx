@@ -86,8 +86,8 @@ export default function PorQueElegirnos() {
               }}
               transition={{ 
                 type: "spring", 
-                stiffness: 400, // Aumentado para mayor rapidez
-                damping: 17     // Ajustado para evitar rebote lento
+                stiffness: 400,
+                damping: 17   
               }}
               className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm cursor-default"
             >

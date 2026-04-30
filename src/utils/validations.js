@@ -77,13 +77,13 @@ export const validarDisponibilidad = (disponibilidad) => {
   return null;
 };
 
-// Validar aceptación de términos
-export const validarTerminos = (terminos) => {
-  if (!terminos) {
-    return "Debes aceptar los términos y condiciones";
-  }
-  return null;
-};
+// Validar aceptación de términos — comentado, descomentar si se requiere en el futuro
+// export const validarTerminos = (terminos) => {
+//   if (!terminos) {
+//     return "Debes aceptar los términos y condiciones";
+//   }
+//   return null;
+// };
 
 // Validar todo el formulario
 export const validarFormulario = (formData) => {
@@ -96,7 +96,7 @@ export const validarFormulario = (formData) => {
     telefono: validarTelefono,
     nivel: validarNivel,
     disponibilidad: validarDisponibilidad,
-    terminos: validarTerminos,
+    // terminos: validarTerminos, // descomentar si se requiere en el futuro
   };
 
   for (const [campo, validar] of Object.entries(validaciones)) {

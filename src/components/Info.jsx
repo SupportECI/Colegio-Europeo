@@ -1,32 +1,32 @@
 'use client'
 
-import { Globe, Award, UserCheck, CheckCircle2 } from "lucide-react";
+import { Languages, BadgeCheck, GraduationCap, ScrollText } from "lucide-react";
 import { motion } from "framer-motion";
 
 const bilingueFeatures = [
   {
-    icon: Globe,
+    icon: Languages,
     name: "Inmersión Total",
     description: "Aprendizaje natural del inglés a través de experiencias diarias.",
     gradient: "from-orange-500 to-orange-400",
     glow: "hover:shadow-orange-200/50",
   },
   {
-    icon: Award,
+    icon: BadgeCheck,
     name: "Programa Certificado",
     description: "Metodología internacional validada académicamente.",
     gradient: "from-emerald-500 to-emerald-400",
     glow: "hover:shadow-emerald-200/50",
   },
   {
-    icon: UserCheck,
+    icon: GraduationCap,
     name: "Maestros Bilingües",
     description: "Docentes certificados con enfoque global.",
     gradient: "from-blue-500 to-blue-400",
     glow: "hover:shadow-blue-200/50",
   },
   {
-    icon: CheckCircle2,
+    icon: ScrollText,
     name: "Certificaciones",
     description: "Preparación para exámenes internacionales.",
     gradient: "from-slate-700 to-slate-500",
@@ -36,7 +36,7 @@ const bilingueFeatures = [
 
 export default function SistemaBilingueexcelencia() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-24 px-6 overflow-hidden" id="sistema">
       
       
       <div className="max-w-6xl mx-auto text-center">
@@ -48,7 +48,7 @@ export default function SistemaBilingueexcelencia() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-xs font-semibold tracking-widest text-emerald-600 uppercase">
+          <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
             Compromiso Global
           </span>
 
@@ -74,7 +74,7 @@ export default function SistemaBilingueexcelencia() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.5 }}
-                className={`group relative p-6 rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-2xl ${feature.glow} transition-all duration-300 hover:-translate-y-2`}
+                className={`group relative p-6 rounded-3xl bg-white border border-gray-100 shadow-md hover:shadow-2xl ${feature.glow} transition-all duration-200 hover:-translate-y-2`}
               >
                 
                 {/* EFECTO BORDER GLOW */}
@@ -95,7 +95,7 @@ export default function SistemaBilingueexcelencia() {
                 </p>
 
                 {/* LÍNEA ANIMADA */}
-                <div className="mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-emerald-500 to-blue-500 transition-all duration-300 rounded-full" />
+                <div className="mt-6 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-400 to-blue-500 transition-all duration-300 rounded-full" />
 
               </motion.div>
             );

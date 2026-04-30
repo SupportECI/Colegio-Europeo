@@ -60,11 +60,11 @@ const AnimatedCard = ({ title, description, icon, delay }) => {
 
   return (
     <motion.div
-      ref={ref} // Usando el ref para activar la animación
+      ref={ref} 
       className="text-sm leading-6"
-      initial={{ opacity: 0, y: 50 }} // Estado inicial
-      animate={inView ? { opacity: 1, y: 0 } : {}} // Estado final con animación
-      transition={{ delay, duration: 0.6, ease: 'easeOut' }} // Configuración de la transición
+      initial={{ opacity: 0, y: 50 }} 
+      animate={inView ? { opacity: 1, y: 0 } : {}} 
+      transition={{ delay, duration: 0.6, ease: 'easeOut' }}
     >
       <div className="relative group">
         <div className="absolute transition rounded-lg opacity-25 -inset-1 bg-gray-100 blur duration-200 group-hover:opacity-100 group-hover:duration-200"></div>

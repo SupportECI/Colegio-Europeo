@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 
 const navigation = [
-  { name: 'Inicio', href: '#inicio', icon: House },
+  { name: 'Inicio', href: '#', icon: House },
   { name: 'Experiencias', href: '#experiencias', icon: PersonStanding },
   { name: 'Galería', href: '#galeria', icon: ImageIcon },
   { name: 'Ubicación', href: '#ubicacion', icon: MapPin },
@@ -37,7 +37,7 @@ export default function Navbar() {
         <div className="flex flex-1">
           <a href="#inicio" className="flex items-center group">
             <img
-              src="./src/assets/images/Logo-Navbar.svg"
+              src="./src/assets/images/Navbar.svg"
               alt="Logo"
               className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
@@ -69,13 +69,12 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* BOTÓN ADMISIONES (DESKTOP) */}
+        {/* BOTÓN LLAMAR (DESKTOP) */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#hero"
-            className="rounded-xl px-6 py-2.5 text-sm font-bold text-white bg-[#0E2976] hover:bg-[#0a1b4a] shadow-lg shadow-blue-900/10 hover:shadow-blue-900/20 transition-all active:scale-95"
-          >
-            Admisiones
+            href="tel:+529611234567"
+            className="rounded-xl px-6 py-2.5 text-sm font-bold text-white bg-[#0E2976] hover:bg-[#0a1b4a] shadow-lg shadow-blue-900/10 hover:shadow-blue-900/20 transition-all active:scale-95">
+            Atención directa
           </a>
         </div>
       </nav>
@@ -140,11 +139,11 @@ export default function Navbar() {
 
                   <div className="pt-4 px-2">
                     <a
-                      href="#hero"
+                      href="tel:+529613001519"
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex w-full items-center justify-center rounded-2xl bg-[#0E2976] py-4 text-base font-bold text-white shadow-xl shadow-blue-900/20 active:scale-95 transition-transform"
                     >
-                      Solicitar Admisión
+                      Atención directa
                     </a>
                   </div>
                 </div>

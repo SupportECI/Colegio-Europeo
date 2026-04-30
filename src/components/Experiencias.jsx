@@ -3,44 +3,44 @@ import React from 'react';
 const ExperiencesGrid = () => {
   const experiences = [
     {
-      title: "Lucha contra el cáncer infantil",
-      description: "Actividades de concientización y apoyo a la comunidad.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/633643442_1378483954292224_8167615114061674339_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=91I1mNDBMRMQ7kNvwHnmCzB&_nc_oc=AdqLa-Oau7GevkJIj4HWnWAl1tMkv5siOCPTHwA9PBwz6j5NBc7e-PDcRviyKP9aU10IzUXCSvrpVq3aIkEVDeET&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=AVARRXxxcUfgLnYunNt-gQ&_nc_ss=7a389&oh=00_Af0OupxSYEMuJPZwIegYwCbTgvy8ISqzXwn0g2p6_y_Awg&oe=69EDE1D4",
+      title: "Titulo 1",
+      description: "Descripción 1",
+      image: "",
       className: "md:col-span-2 md:row-span-2 min-h-[300px] md:min-h-[400px]",
       level: "General"
     },
     {
-      title: "Amor y Amistad",
-      description: "Celebración de la amistad con actividades de integración.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/634727650_1376234184517201_5423934136152546227_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=Sxa3p5YGps8Q7kNvwFEomNy&_nc_oc=Adow74kGMTTKiHYcGNPhGiSApMMjQuWuPC0ovKVPmtKMh1Qi4dkh-1559My1qq8yo3Z4uI_JTOk7hOlSapXYv9NK&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=i5Us8EJ34ZkkhmSDYmSn4w&_nc_ss=7a389&oh=00_Af26p8dBEPFcpZB3PcPzlJVUQ2Yc-eqAkemmBI9-krRXTg&oe=69EDCC75",
+      title: "titulo 2",
+      description: "Descripción 2",
+      image: "",
       className: "md:col-span-2 md:row-span-1 min-h-[200px]",
       level: "Primaria"
     },
     {
-      title: "Día del Maestro",
-      description: "Reconocimiento a nuestra labor docente.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/498274518_1146818754125413_6238808660393267717_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=7b2446&_nc_ohc=cxJOpdi-uzIQ7kNvwE9Ldzs&_nc_oc=AdqQ4fHiBOQChsuIVjvm8HrS4JTEwMFmtWCzeWbGLs2aYaltVjI33j0j5iaG1X6Pybu40QCiNFJXUw0CXRoCcJaJ&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=Aj4p6M6fbcwu98fwyly6UQ&_nc_ss=7a389&oh=00_Af2sdtaIBgs9IaWtPYoE94b5jk0wA5m9JhBd7eL-qSCCPA&oe=69EDD826",
+      title: "titulo 3",
+      description: "Descripción 3",
+      image: "",
       className: "md:col-span-1 md:row-span-1 min-h-[200px]",
       level: "Docentes"
     },
     {
-      title: "Día de la Mujer",
-      description: "Reflexión y empoderamiento femenino.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/648501110_1394864039320882_4700067049278671492_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=SHzLCvHP210Q7kNvwHuWq8h&_nc_oc=AdoGACkUthgWAdWU81wPaxhPEjHjoL24KT7o9L60uOcdETDDAQ1klXh5GG-TdSmgP40KWZNWfpfEg2WvC4JnX-Vb&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=N3NMcuMU1zt0Apq2RXS81Q&_nc_ss=7a389&oh=00_Af2rlaYDFRvD_fkA-rji72SrueQTGcJD_hgZWCT_nKjJBA&oe=69EDE733",
+      title: "titulo 4",
+      description: "Descripción 4",
+      image: "",
       className: "md:col-span-1 md:row-span-2 min-h-[300px]",
       level: "Primaria"
     },
     {
-      title: "Fuera del Aula",
-      description: "Excursiones y aprendizaje experiencial.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/495573956_1137287041745251_3499297871848470925_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=MDyHZ3dlIjQQ7kNvwEDRDvw&_nc_oc=AdoBj-yy71kgUvKtnRsvwp4erG2g-0nha3QS1wQ_0_YQZ_ZPDBcYUafvOi9aBmYGJYOap8AmPYeqt0-lFgl72_c3&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=xsEutBOjYIpSc8LyBDvunQ&_nc_ss=7a389&oh=00_Af0tgfZ4Op1j14xFHr2mjBhqqyeNIjq4Opk5jQbxuC_Uqw&oe=69EDC9AE",
+      title: "titulo 5",
+      description: "Descripción 5",
+      image: "",
       className: "md:col-span-2 md:row-span-1 min-h-[200px]",
       level: "Todos"
     },
     {
-      title: "Con Padres",
-      description: "Fortaleciendo la comunidad educativa.",
-      image: "https://scontent.fvsa3-1.fna.fbcdn.net/v/t39.30808-6/492416418_1126882926118996_2967854373480383938_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=XeQxV-MGMFQQ7kNvwHVl_vB&_nc_oc=AdoTmQjdGyv7gfeuXIiDNLI13bBQr8GGOilLpCnkaQjYuU56uZZ4IvXpZzvqXpN7GiFcDdy0WwCa0NlJfbJGm0wJ&_nc_zt=23&_nc_ht=scontent.fvsa3-1.fna&_nc_gid=MX7TuI2nhpRZ8e80qzo96g&_nc_ss=7a389&oh=00_Af1H4-qwEwoYjPg-dgcd1QilnUZu_CUh-HokUYiGtQbFYg&oe=69EDD2C6",
+      title: "titulo 6",
+      description: "Descripción 6",
+      image: "",
       className: "md:col-span-1 md:row-span-1 min-h-[200px]",
       level: "Primaria"
     },
