@@ -17,6 +17,9 @@ import {
   Activity
 } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
+import maternalImg from '../assets/images/Maternal-1.jpg';
+import preescolarImg from '../assets/images/Presscolar1.jpg';
+import primariaImg from '../assets/images/Primaria1.jpg';
 
 const posts = [
   {
@@ -40,7 +43,7 @@ const posts = [
     benefits: ["Desarrollo de lenguaje bilingüe", "Motricidad fina y gruesa", "Estimulación de la creatividad", "Control de esfínteres", "Socialización temprana", "Rutinas y hábitos saludables"],
     includes: ["Material didáctico manipulativo", "Clases de música y movimiento", "Área de juegos y exploración", "Comedor con menú balanceado", "Evaluación de desarrollo", "Talleres para padres"],
     stats: { schedule: "7:00 - 15:00", capacity: "Máx. 15", cycle: "2025-2026" },
-    imageUrl: "./src/assets/images/Maternal-1.jpg",
+    imageUrl: maternalImg,
   },
   {
     id: 2,
@@ -63,7 +66,7 @@ const posts = [
     benefits: ["Programa bilingüe certificado", "Lectoescritura en ambos idiomas", "Pensamiento matemático y lógico", "Educación socioemocional", "Preparación para primaria", "Habilidades artísticas y deportivas"],
     includes: ["Libros y materiales didácticos", "Clases de inglés diarias", "Educación física y danza", "Talleres de ciencia y tecnología", "Comedor supervisado", "Eventos culturales y deportivos"],
     stats: { schedule: "7:00 - 14:00", capacity: "Máx. 20", cycle: "2025-2026" },
-    imageUrl: "./src/assets/images/Presscolar1.jpg",
+    imageUrl: preescolarImg,
   },
   {
     id: 3,
@@ -86,7 +89,7 @@ const posts = [
     benefits: ["Programa bilingüe de alto nivel", "Certificaciones Cambridge", "Pensamiento crítico y creativo", "Uso de tecnología educativa", "Formación en valores", "Preparación para secundaria"],
     includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Laboratorio de ciencias", "Educación física y artes", "Robótica y programación", "Actividades extraescolares"],
     stats: { schedule: "7:00 - 14:30", capacity: "Máx. 25", cycle: "2025-2026" },
-    imageUrl: "./src/assets/images/Primaria1.jpg",
+    imageUrl: primariaImg,
   },
 ];
 

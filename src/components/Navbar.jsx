@@ -7,6 +7,8 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react'
+import navbarLogo from '../assets/images/Navbar.svg'
+import navbarLogoSmall from '../assets/images/logo.svg'
 
 import {
   House,
@@ -37,7 +39,7 @@ export default function Navbar() {
         <div className="flex flex-1">
           <a href="#inicio" className="flex items-center group">
             <img
-              src="./src/assets/images/Navbar.svg"
+              src={navbarLogo}
               alt="Logo"
               className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
             />
@@ -111,7 +113,7 @@ export default function Navbar() {
                 
                 {/* Header del Panel */}
                 <div className="flex items-center justify-between p-5 border-b border-gray-50">
-                  <img src="./src/assets/images/Logo-Navbar.svg" alt="Logo" className="h-9 w-auto" />
+                  <img src={navbarLogoSmall} alt="Logo" className="h-9 w-auto" />
                   <button
                     onClick={() => setMobileMenuOpen(false)}
                     className="p-2 rounded-full hover:bg-gray-100 transition-colors"

@@ -1,5 +1,9 @@
 import { Brain, Heart, Users, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
+import desaCognitivo from '../assets/images/Desarrollo-cognitivo.jpg';
+import desaEmocional from '../assets/images/Desarrollo-emocional.jpg';
+import desaSocial from '../assets/images/Desarrollo-social.jpg';
+import desaFisico from '../assets/images/Desarrollo-fisico.jpg';
 
 const pilares = [
   {
@@ -11,7 +15,7 @@ const pilares = [
       bg: "bg-blue-50",
       text: "text-blue-600",
     },
-    imageUrl: "./src/assets/images/Desarrollo-cognitivo.jpg", 
+    imageUrl: desaCognitivo, 
   },
   {
     id: 2,
@@ -22,7 +26,7 @@ const pilares = [
       bg: "bg-orange-50",
       text: "text-orange-600",
     },
-    imageUrl: "./src/assets/images/Desarrollo-emocional.jpg", 
+    imageUrl: desaEmocional, 
   },
   {
     id: 3,
@@ -33,7 +37,7 @@ const pilares = [
       bg: "bg-emerald-50",
       text: "text-emerald-600",
     },
-    imageUrl: "./src/assets/images/Desarrollo-social.jpg", 
+    imageUrl: desaSocial, 
   },
   {
     id: 4,
@@ -44,7 +48,7 @@ const pilares = [
       bg: "bg-purple-50",
       text: "text-purple-600",
     },
-    imageUrl: "./src/assets/images/Desarrollo-fisico.jpg", 
+    imageUrl: desaFisico, 
   },
 ];
 

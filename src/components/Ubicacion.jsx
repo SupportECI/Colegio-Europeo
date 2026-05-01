@@ -1,4 +1,5 @@
 import { MapPin, Navigation, ShieldCheck, Clock, School, ExternalLink } from "lucide-react";
+import colegioImage from '../assets/images/Colegio.png'
 // Ubicación component
 
 export default function UbicacionColegio() {
@@ -27,7 +28,7 @@ export default function UbicacionColegio() {
             className="relative"
           >
             <img
-              src="./src/assets/images/Colegio.png"
+              src={colegioImage}
               alt="Instalaciones Centro Educativo Europeo"
               className="rounded-[2.5rem] shadow-2xl shadow-slate-200 object-cover w-full h-95 border-4 border-white"
             />

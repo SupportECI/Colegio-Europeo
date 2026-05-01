@@ -12,6 +12,7 @@ import {
   BriefcaseBusiness,
   X,
 } from 'lucide-react'
+import logoFooter from '../assets/images/Logo-Footer.svg'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -92,7 +93,7 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <div className="mb-6 ">
               <img 
-                src="/src/assets/images/Logo-Footer.svg"
+                src={logoFooter}
                 width={200} 
                 className="-mt-3"
                 alt="Logo Centro Educativo Europeo" 

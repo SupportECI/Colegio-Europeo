@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { validarFormulario } from "../utils/validations";
+import { enviarFormulario } from "../utils/whatsappHandler";
 import {
   mostrarAlertaValidacion,
   mostrarAlertaExito,
@@ -7,6 +8,7 @@ import {
   limpiarFormulario,
   manejarCambio,
 } from "../utils/formHandler";
+import logoSvg from "../assets/images/logo.svg";
 
 const HeroForm = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +39,13 @@ const HeroForm = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       mostrarAlertaExito(formData);
-      limpiarFormulario(setFormData, setErrors);
+      
+      // Enviar a WhatsApp con los datos del formulario
+      setTimeout(() => {
+        enviarFormulario(formData);
+        // Limpiar formulario después de enviar
+        limpiarFormulario(setFormData, setErrors);
+      }, 500);
     } catch {
       mostrarAlertaError();
     } finally {
@@ -81,7 +89,7 @@ const HeroForm = () => {
           <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
             <div className="h-14 w-14 rounded-2xl flex items-center justify-center flex-shrink-0 bg-[#0E2976]/5">
               <img
-                src="./src/assets/images/logo.svg"
+                src={logoSvg}
                 alt="Logo"
                 className="h-8 w-auto"
               />
@@ -104,6 +112,7 @@ const HeroForm = () => {
             <div className={fieldClasses}>
               <label className={labelClasses}>Nombre *</label>
               <input
+                id="nombre"
                 type="text"
                 name="nombre"
                 value={formData.nombre}
@@ -119,6 +128,7 @@ const HeroForm = () => {
             <div className={fieldClasses}>
               <label className={labelClasses}>Apellido *</label>
               <input
+                id="apellido"
                 type="text"
                 name="apellido"
                 value={formData.apellido}
@@ -137,6 +147,7 @@ const HeroForm = () => {
             <div className={fieldClasses}>
               <label className={labelClasses}>Email Institucional *</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -152,6 +163,7 @@ const HeroForm = () => {
             <div className={fieldClasses}>
               <label className={labelClasses}>WhatsApp *</label>
               <input
+                id="telefono"
                 type="tel"
                 name="telefono"
                 value={formData.telefono}
@@ -171,6 +183,7 @@ const HeroForm = () => {
               <label className={labelClasses}>Nivel de Interés *</label>
               <div className="relative">
                 <select
+                  id="nivel"
                   name="nivel"
                   value={formData.nivel}
                   onChange={handleChange}
@@ -196,6 +209,7 @@ const HeroForm = () => {
               <label className={labelClasses}>¿Cuándo iniciaría? *</label>
               <div className="relative">
                 <select
+                  id="disponibilidad"
                   name="disponibilidad"
                   value={formData.disponibilidad}
                   onChange={handleChange}
@@ -222,6 +236,7 @@ const HeroForm = () => {
           {/* Botón Submit: Mucho más grande y táctil */}
           <div className="pt-4">
             <button
+              id="EnviarSolicitud"
               type="submit"
               disabled={isLoading}
               className="w-full text-white font-bold py-4 sm:py-5 px-6 rounded-2xl text-base sm:text-lg hover:shadow-[0_20px_50px_rgba(14,41,118,0.3)] hover:-translate-y-1 active:translate-y-0 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3"
