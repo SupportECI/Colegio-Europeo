@@ -1,14 +1,11 @@
-/* Hero Section Animations */
+/* Hero Section Animations - Professional Design */
 
-/* Ghost-like fade in for image card */
-@keyframes ghostFadeIn {
+/* Fade in with scale and blur for premium feel */
+@keyframes premiumFadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.92) translateY(20px);
-    filter: blur(8px);
-  }
-  50% {
-    filter: blur(4px);
+    transform: scale(0.95) translateY(20px);
+    filter: blur(6px);
   }
   100% {
     opacity: 1;
@@ -17,27 +14,27 @@
   }
 }
 
-/* Subtle floating animation */
+/* Subtle floating animation for badges and icons */
 @keyframes subtleFloat {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
   }
 }
 
-/* Glow pulse effect */
+/* Smooth glow pulse for icons */
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
   }
   50% {
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.2);
   }
 }
 
-/* Shimmer effect */
+/* Shimmer effect for text highlights */
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
@@ -47,11 +44,11 @@
   }
 }
 
-/* Text reveal animation */
+/* Text reveal with smooth animation */
 @keyframes textReveal {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     clip-path: inset(0 0 100% 0);
   }
   100% {
@@ -61,7 +58,7 @@
   }
 }
 
-/* Gradient shift animation */
+/* Gradient animation for background */
 @keyframes gradientShift {
   0%, 100% {
     background-position: 0% center;
@@ -71,7 +68,7 @@
   }
 }
 
-/* Hero image card styling */
+/* Hero image/card styling */
 .hero-image-card {
   animation: glowPulse 3s ease-in-out infinite;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(239, 246, 255, 0.5));
@@ -83,19 +80,128 @@
   inset: 0;
   border-radius: 1.5rem;
   padding: 1.5px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(129, 140, 248, 0.1));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(129, 140, 248, 0.15));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
-/* Hover effect for buttons */
+/* Premium button styles */
 .hero-button-premium {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.hero-button-premium:hover::before {
+  transform: translateX(100%);
+}
+
+/* Feature cards entrance animation */
+.feature-card {
+  animation: premiumFadeIn 0.6s ease-out backwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Stat number animation */
+@keyframes countUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number {
+  animation: countUp 0.8s ease-out;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Badge entrance */
+@keyframes badgeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.badge-entrance {
+  animation: badgeSlide 0.6s ease-out 0.2s backwards;
+}
+
+/* Form entrance */
+@keyframes formSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.form-entrance {
+  animation: formSlide 0.8s ease-out 0.3s backwards;
+}
+
+/* Hover effect for interactive elements */
+@keyframes hoverLift {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.hover-lift:hover {
+  animation: hoverLift 0.4s ease-out;
+}
+
+/* Gradient text animation */
+@keyframes gradientText {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-text-animated {
+  background: linear-gradient(90deg, #0E2976, #1a3a7a, #0E2976);
+  background-size: 200% 100%;
+  animation: gradientText 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-button-premium::after {

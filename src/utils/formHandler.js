@@ -1,422 +1,276 @@
 /**
- * Manejador de formulario con SweetAlert2
+ * Manejador de formulario - Centro Educativo Europeo
+ * Estilo: Bento Dashboard White Edition
  */
 
 import Swal from "sweetalert2";
 
-// Paleta de colores base
+// Paleta basada en blancos y azules institucionales sutiles
 const COLOR = {
   primary: "#0E2976",
-  primaryLight: "#1a3a7a",
-  success: "#10b981",
-  error: "#ef4444",
-  warning: "#f59e0b",
-  gray: "#6b7280",
+  textMain: "#1e293b",
+  textMuted: "#64748b",
+  border: "#f1f5f9",
+  white: "#ffffff",
 };
 
-// Estilos base compartidos para todas las alertas
 const baseStyles = `
   <style>
-    @keyframes fadeSlideIn {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
     @keyframes scaleIn {
-      from { opacity: 0; transform: scale(0.92); }
-      to   { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
-    @keyframes shimmer {
-      0%   { background-position: -200% center; }
-      100% { background-position:  200% center; }
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.75); }
+    
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
-    .swal-dashboard {
-      font-family: 'Inter', system-ui, sans-serif;
-      animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    .swal-bento-white {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      border-radius: 24px !important;
+      padding: 2rem !important;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
     }
 
-    /* Bento grid de 2 columnas */
+    .dashboard-container {
+      animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      text-align: left;
+    }
+
+    /* Grid tipo Bento */
     .bento-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 16px;
-    }
-    .bento-grid .bento-full {
-      grid-column: 1 / -1;
+      gap: 12px;
+      margin: 20px 0;
     }
 
-    /* Tarjeta bento */
     .bento-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 12px 14px;
-      text-align: left;
-      animation: fadeSlideIn 0.4s ease both;
-      transition: box-shadow 0.2s;
+      background: ${COLOR.white};
+      border: 1px solid ${COLOR.border};
+      border-radius: 16px;
+      padding: 16px;
+      transition: all 0.3s ease;
+      animation: slideRight 0.4s ease both;
     }
-    .bento-card:hover { box-shadow: 0 4px 16px rgba(14,41,118,0.08); }
-    .bento-card:nth-child(1) { animation-delay: 0.05s; }
-    .bento-card:nth-child(2) { animation-delay: 0.10s; }
-    .bento-card:nth-child(3) { animation-delay: 0.15s; }
-    .bento-card:nth-child(4) { animation-delay: 0.20s; }
 
-    .bento-label {
+    .bento-card:hover {
+      border-color: ${COLOR.primary}44;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Delays para las tarjetas */
+    .bento-card:nth-child(1) { animation-delay: 0.1s; }
+    .bento-card:nth-child(2) { animation-delay: 0.2s; }
+    .bento-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .card-label {
       font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: #94a3b8;
       margin-bottom: 4px;
     }
-    .bento-value {
+
+    .card-value {
       font-size: 13px;
       font-weight: 600;
-      color: #1e293b;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .bento-icon {
-      font-size: 16px;
-      margin-bottom: 6px;
-      display: block;
+      color: ${COLOR.textMain};
     }
 
-    /* Badge de estado */
-    .status-badge {
+    /* Botón Minimalista Blanco/Azul */
+    .btn-bento-primary {
+      background: ${COLOR.primary} !important;
+      color: white !important;
+      border-radius: 12px !important;
+      padding: 14px 30px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      width: 100%;
+      border: none !important;
+      box-shadow: 0 4px 6px -1px rgba(14, 41, 118, 0.2) !important;
+    }
+
+    .btn-bento-cancel {
+      background: transparent !important;
+      color: #94a3b8 !important;
+      font-weight: 600 !important;
+      width: 100%;
+      margin-top: 8px !important;
+    }
+
+    /* Indicador de estado sutil */
+    .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-radius: 99px;
       padding: 4px 12px;
+      background: #f8fafc;
+      border: 1px solid ${COLOR.border};
+      border-radius: 99px;
       font-size: 11px;
       font-weight: 600;
-      color: #059669;
-      margin-bottom: 12px;
+      color: ${COLOR.primary};
+      margin-bottom: 16px;
     }
+
     .status-dot {
-      width: 6px; height: 6px;
+      width: 6px;
+      height: 6px;
+      background: ${COLOR.primary};
       border-radius: 50%;
-      background: #10b981;
-      animation: pulse-dot 1.4s ease-in-out infinite;
-    }
-
-    /* Shimmer para el título de éxito */
-    .shimmer-text {
-      background: linear-gradient(90deg, #0E2976 25%, #3b82f6 50%, #0E2976 75%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 2.5s linear infinite;
-    }
-
-    /* Divider */
-    .swal-divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-      margin: 14px 0;
-    }
-
-    /* Footer note */
-    .swal-footnote {
-      font-size: 11px;
-      color: #94a3b8;
-      margin-top: 14px;
-      text-align: center;
-      animation: fadeSlideIn 0.5s ease 0.3s both;
-    }
-
-    /* Warning grid especial */
-    .warning-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-      text-align: left;
-    }
-    .warning-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 10px;
-      padding: 10px 12px;
-      font-size: 12px;
-      color: #92400e;
-      font-weight: 500;
-      animation: fadeSlideIn 0.35s ease both;
-    }
-    .warning-item:nth-child(1) { animation-delay: 0.05s; }
-    .warning-item:nth-child(2) { animation-delay: 0.12s; }
-    .warning-item:nth-child(3) { animation-delay: 0.19s; }
-    .warning-item-icon {
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-
-    /* Confirm button override */
-    .swal2-confirm.swal-btn-primary {
-      background: linear-gradient(135deg, #0E2976, #1a3a7a) !important;
-      border: none !important;
-      border-radius: 10px !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.02em !important;
-      padding: 10px 28px !important;
-      transition: opacity 0.2s, transform 0.2s !important;
-    }
-    .swal2-confirm.swal-btn-primary:hover {
-      opacity: 0.9 !important;
-      transform: translateY(-1px) !important;
-    }
-    .swal2-cancel.swal-btn-cancel {
-      border-radius: 10px !important;
-      font-weight: 600 !important;
-      padding: 10px 28px !important;
+      margin-right: 8px;
     }
   </style>
 `;
 
 /**
- * Muestra una alerta de validación con SweetAlert2
+ * Alerta de Validación (Ahora con diseño Bento)
  */
 export const mostrarAlertaValidacion = () => {
   Swal.fire({
     html: `
       ${baseStyles}
-      <div class="swal-dashboard">
-        <div style="font-size:36px; margin-bottom:8px;">⚠️</div>
-        <div style="font-size:18px; font-weight:700; color:#1e293b; margin-bottom:4px;">
-          Campos incompletos
-        </div>
-        <div style="font-size:13px; color:#64748b; margin-bottom:2px;">
-          Revisa los siguientes puntos antes de continuar
-        </div>
-
-        <div class="swal-divider"></div>
-
-        <div class="warning-list">
-          <div class="warning-item">
-            <span class="warning-item-icon">📋</span>
-            Completa todos los campos marcados con *
-          </div>
-          <div class="warning-item">
-            <span class="warning-item-icon">✉️</span>
-            Verifica que tu email tenga un formato válido
-          </div>
-          <div class="warning-item">
-            <span class="warning-item-icon">📱</span>
-            El teléfono debe tener al menos 10 dígitos
-          </div>
-        </div>
-
-        <p class="swal-footnote">Todos los campos son necesarios para procesar tu solicitud.</p>
-      </div>
-    `,
-    showConfirmButton: true,
-    confirmButtonText: "Entendido",
-    customClass: { confirmButton: "swal-btn-primary" },
-    buttonsStyling: false,
-    allowOutsideClick: false,
-    background: "#ffffff",
-    width: 400,
-  });
-};
-
-/**
- * Muestra alerta de éxito después de envío
- */
-export const mostrarAlertaExito = (formData) => {
-  const nivelMap = {
-    maternal: "Maternal",
-    preescolar: "Preescolar",
-    primaria: "Primaria",
-  };
-  const disponibilidadMap = {
-    inmediato: "Inmediato",
-    un_mes: "En 1 mes",
-    dos_tres_meses: "2 - 3 meses",
-    proximo_ciclo: "Próximo ciclo",
-  };
-
-  Swal.fire({
-    html: `
-      ${baseStyles}
-      <div class="swal-dashboard">
-
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          Solicitud procesada
-        </div>
-
-        <div style="font-size:22px; font-weight:800; margin-bottom:4px;" class="shimmer-text">
-          ¡Todo listo, ${formData.nombre}!
-        </div>
-        <div style="font-size:13px; color:#64748b; margin-bottom:2px;">
-          Tu solicitud de admisión fue enviada correctamente
-        </div>
-
-        <div class="swal-divider"></div>
-
+      <div class="dashboard-container">
+        <div class="status-pill"><span class="status-dot"></span>Acción requerida</div>
+        <h2 style="font-size: 22px; font-weight: 700; color: ${COLOR.textMain}; margin: 0;">¡Formulario incompleto!</h2>
+        <p style="font-size: 12px; color: ${COLOR.textMuted}; margin-top: 8px;">Se han detectado detalles que impiden procesar tu solicitud.</p>
+        
         <div class="bento-grid">
           <div class="bento-card">
-            <span class="bento-icon">👤</span>
-            <div class="bento-label">Solicitante</div>
-            <div class="bento-value">${formData.nombre} ${formData.apellido}</div>
+            <div class="card-label">Campos (*)</div>
+            <div class="card-value">Faltan datos</div>
           </div>
           <div class="bento-card">
-            <span class="bento-icon">🎓</span>
-            <div class="bento-label">Nivel</div>
-            <div class="bento-value">${nivelMap[formData.nivel] || formData.nivel}</div>
+            <div class="card-label">Teléfono</div>
+            <div class="card-value">Número inválido</div>
           </div>
-          <div class="bento-card">
-            <span class="bento-icon">✉️</span>
-            <div class="bento-label">Email</div>
-            <div class="bento-value">${formData.email}</div>
-          </div>
-          <div class="bento-card">
-            <span class="bento-icon">📱</span>
-            <div class="bento-label">Teléfono</div>
-            <div class="bento-value">${formData.telefono}</div>
-          </div>
-          <div class="bento-card bento-full">
-            <span class="bento-icon">📅</span>
-            <div class="bento-label">Incorporación</div>
-            <div class="bento-value">${disponibilidadMap[formData.disponibilidad] || formData.disponibilidad}</div>
+          <div class="bento-card" style="grid-column: span 2;">
+            <div class="card-label">Instrucción</div>
+            <div class="card-value">Revisa que todos los datos sean correctos</div>
           </div>
         </div>
 
-        <p class="swal-footnote">Nos pondremos en contacto contigo a la brevedad posible.</p>
+        <p style="font-size: 11px; color: #94a3b8; line-height: 1.5;">
+          Por favor, completa la información resaltada en el formulario para continuar. <br><br>¡Gracias por tu interés en el <strong>Centro Educativo Europeo!</strong></b>
+        </p>
       </div>
     `,
-    showConfirmButton: true,
-    confirmButtonText: "Cerrar",
-    customClass: { confirmButton: "swal-btn-primary" },
+    confirmButtonText: "Volver al formulario",
+    customClass: { popup: "swal-bento-white", confirmButton: "btn-bento-primary" },
     buttonsStyling: false,
-    allowOutsideClick: false,
-    background: "#ffffff",
     width: 440,
   });
 };
 
 /**
- * Muestra alerta de error en el envío
+ * Alerta de Éxito (Se mantiene igual)
  */
-export const mostrarAlertaError = () => {
+export const mostrarAlertaExito = (formData) => {
+  const nivelMap = { maternal: "Maternal", preescolar: "Preescolar", primaria: "Primaria" };
+  
   Swal.fire({
     html: `
       ${baseStyles}
-      <div class="swal-dashboard">
-        <div style="font-size:36px; margin-bottom:8px;">❌</div>
-        <div style="font-size:18px; font-weight:700; color:#1e293b; margin-bottom:4px;">
-          Error al enviar
-        </div>
-        <div style="font-size:13px; color:#64748b;">
-          No pudimos procesar tu solicitud en este momento
-        </div>
-
-        <div class="swal-divider"></div>
-
-        <div class="bento-card bento-full" style="background:#fef2f2; border-color:#fecaca; margin-top:4px;">
-          <span class="bento-icon">🔌</span>
-          <div class="bento-label" style="color:#f87171;">Posibles causas</div>
-          <div style="font-size:12px; color:#7f1d1d; line-height:1.6; margin-top:4px;">
-            Verifica tu conexión a internet e intenta de nuevo.<br/>
-            Si el problema persiste, contáctanos directamente.
+      <div class="dashboard-container">
+        <div class="status-pill"><span class="status-dot"></span>Admisión Procesada</div>
+        <h2 style="font-size: 22px; font-weight: 700; color: ${COLOR.textMain}; margin: 0;">¡Hola, ${formData.nombre}!</h2>
+        <p style="font-size: 14px; color: ${COLOR.textMuted}; margin-top: 8px;">Hemos registrado tu solicitud correctamente en nuestro sistema.</p>
+        
+        <div class="bento-grid">
+          <div class="bento-card">
+            <div class="card-label">Programa</div>
+            <div class="card-value">${nivelMap[formData.nivel] || formData.nivel}</div>
+          </div>
+          <div class="bento-card">
+            <div class="card-label">Contacto</div>
+            <div class="card-value">${formData.telefono}</div>
+          </div>
+          <div class="bento-card" style="grid-column: span 2;">
+            <div class="card-label">Disponibilidad</div>
+            <div class="card-value">${formData.disponibilidad}</div>
+          </div>
+          <div class="bento-card" style="grid-column: span 2;">
+            <div class="card-label">Email de Seguimiento</div>
+            <div class="card-value">${formData.email}</div>
           </div>
         </div>
 
-        <p class="swal-footnote">Error de red o servidor. Código: 500</p>
+        <p style="font-size: 11px; color: #94a3b8; line-height: 1.5;">
+          Un asesor académico del <strong>Centro Educativo Europeo</strong> se comunicará contigo para los siguientes pasos.
+        </p>
       </div>
     `,
-    showConfirmButton: true,
-    confirmButtonText: "Intentar de nuevo",
-    customClass: { confirmButton: "swal-btn-primary" },
+    confirmButtonText: "Entendido",
+    customClass: { popup: "swal-bento-white", confirmButton: "btn-bento-primary" },
     buttonsStyling: false,
-    background: "#ffffff",
-    width: 400,
+    width: 440,
   });
 };
 
 /**
- * Muestra alerta de confirmación
+ * Resto de funciones (Confirmación, Error, Handlers)
  */
 export const mostrarAlertaConfirmacion = () => {
   return Swal.fire({
     html: `
       ${baseStyles}
-      <div class="swal-dashboard">
-        <div style="font-size:36px; margin-bottom:8px;">🚀</div>
-        <div style="font-size:18px; font-weight:700; color:#1e293b; margin-bottom:4px;">
-          ¿Confirmas el envío?
+      <div class="dashboard-container">
+        <div class="status-pill"><span class="status-dot"></span>Confirmación</div>
+        <h2 style="font-size: 20px; font-weight: 700; color: ${COLOR.textMain}; margin: 0;">¿Enviar solicitud?</h2>
+        <p style="font-size: 14px; color: ${COLOR.textMuted}; margin-top: 8px;">Tu información será enviada al departamento de admisiones del colegio.</p>
+        
+        <div class="bento-card" style="margin: 20px 0; background: #fcfcfc;">
+          <div class="card-label">Nota importante</div>
+          <div class="card-value" style="font-weight: 400; font-size: 12px;">Al confirmar, aceptas ser contactado por nuestro personal docente.</div>
         </div>
-        <div style="font-size:13px; color:#64748b;">
-          Revisa que tu información sea correcta antes de continuar
-        </div>
-
-        <div class="swal-divider"></div>
-
-        <div class="bento-card bento-full" style="margin-top:4px;">
-          <div style="font-size:12px; color:#475569; line-height:1.7;">
-            Al confirmar, recibirás una respuesta de nuestro equipo<br/>
-            en un plazo de <strong>24 a 48 horas hábiles</strong>.
-          </div>
-        </div>
-
-        <p class="swal-footnote">Esta acción no se puede deshacer.</p>
       </div>
     `,
     showCancelButton: true,
-    confirmButtonText: "Sí, enviar",
+    confirmButtonText: "Confirmar envío",
     cancelButtonText: "Cancelar",
     customClass: {
-      confirmButton: "swal-btn-primary",
-      cancelButton: "swal-btn-cancel",
+      popup: "swal-bento-white",
+      confirmButton: "btn-bento-primary",
+      cancelButton: "btn-bento-cancel"
     },
     buttonsStyling: false,
-    allowOutsideClick: false,
-    background: "#ffffff",
     width: 400,
   });
 };
 
-/**
- * Limpia el formulario
- */
-export const limpiarFormulario = (setFormData, setErrors) => {
-  setFormData({
-    nombre: "",
-    apellido: "",
-    email: "",
-    telefono: "",
-    nivel: "",
-    disponibilidad: "",
-    // terminos: false, // descomentar si se requiere en el futuro
+export const mostrarAlertaError = () => {
+  Swal.fire({
+    html: `
+      ${baseStyles}
+      <div class="dashboard-container">
+        <div class="status-pill" style="color: #ef4444;"><span class="status-dot" style="background: #ef4444;"></span>Error de conexión</div>
+        <h2 style="font-size: 20px; font-weight: 700; color: ${COLOR.textMain}; margin: 0;">No se pudo enviar</h2>
+        <p style="font-size: 14px; color: ${COLOR.textMuted}; margin-top: 8px;">Tuvimos un problema técnico al procesar tus datos.</p>
+        
+        <div class="bento-card" style="margin-top: 20px; border-color: #fee2e2;">
+          <div class="card-value" style="color: #991b1b;">Por favor, verifica tu conexión e intenta de nuevo.</div>
+        </div>
+      </div>
+    `,
+    confirmButtonText: "Reintentar",
+    customClass: { popup: "swal-bento-white", confirmButton: "btn-bento-primary" },
+    buttonsStyling: false,
+    width: 400,
   });
+};
+
+export const limpiarFormulario = (setFormData, setErrors) => {
+  setFormData({ nombre: "", apellido: "", email: "", telefono: "", nivel: "", disponibilidad: "" });
   setErrors({});
 };
 
-/**
- * Maneja el cambio de input
- */
 export const manejarCambio = (e, setFormData, setErrors) => {
   const { name, value, type, checked } = e.target;
-
-  setFormData((prev) => ({
-    ...prev,
-    [name]: type === "checkbox" ? checked : value,
-  }));
-
-  setErrors((prev) => ({
-    ...prev,
-    [name]: undefined,
-  }));
+  setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
+  setErrors((prev) => ({ ...prev, [name]: undefined }));
 };

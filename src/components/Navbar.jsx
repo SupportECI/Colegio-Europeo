@@ -41,7 +41,7 @@ export default function Navbar() {
             <img
               src={navbarLogo}
               alt="Logo"
-              className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-15  w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </a>
         </div>
