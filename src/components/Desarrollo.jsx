@@ -62,7 +62,7 @@ export default function FormacionIntegral() {
             Formación Integral para el Futuro
           </h2>
           <p className="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">
-            Educamos a niños completos, desarrollando todas sus capacidades y potencial.
+            Educamos a niños desarrollando todas sus capacidades y potencial.
           </p>
         </div>
 

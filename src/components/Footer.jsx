@@ -53,16 +53,13 @@ const institucionLinks = [
 
 const avisosLinks = [
   { label: 'Reglamento Escolar',   href: '/reglamento' },
-  { label: 'Costos y Pagos',       href: '/costos' },
-  { label: 'Plataforma Educativa', href: '/plataforma' },
-  { label: 'Circular de Padres',   href: '/circulares' },
+  { label: 'Términos y Condiciones',       href: '/costos' },
+  { label: 'Aviso de Privacidad', href: '/plataforma' },
 ]
 
 const socialLinks = [
   { Icon: Facebook,      href: 'https://facebook.com/tuPagina' },
-  { Icon: Instagram,     href: 'https://instagram.com/tuPagina' },
-  { Icon: Youtube,       href: 'https://youtube.com/tuCanal' },
-  { Icon: BriefcaseBusiness, href: 'https://wa.me/529611234567' },
+  { Icon: Instagram,     href: 'https://instagram.com/tuPagina' }
 ]
 
 export default function Footer() {
@@ -99,7 +96,7 @@ export default function Footer() {
                 alt="Logo Centro Educativo Europeo" 
               />
               <p className="text-sm text-white/70 mt-1 leading-relaxed">
-                Formando líderes con valores, excelencia académica y un sistema bilingüe integral desde hace más de 20 años en Chiapas.
+                Formando líderes con valores, excelencia académica y un sistema bilingüe integral desde hace más de 10 años en Chiapas.
               </p>
             </div>
 
@@ -113,8 +110,8 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-blue-300" />
-                <a href="tel:+529611234567" className="text-sm hover:text-white transition">
-                  (961) 123 4567
+                <a href="tel:+529616066550" className="text-sm hover:text-white transition">
+                  (961) 606 65 50
                 </a>
               </div>
 
@@ -126,7 +123,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-2 mt-6">
               {socialLinks.map(({ Icon, href }, i) => (
                 <a
                   key={i}
@@ -179,11 +176,20 @@ export default function Footer() {
               Avisos y Legal
             </h4>
             <ul className="space-y-4">
-              {avisosLinks.map(({ label, href }) => (
+              {avisosLinks.map(({ label, href, modalId }) => (
                 <li key={label}>
-                  <a href={href} className="text-sm text-white/70 hover:text-white transition">
-                    {label}
-                  </a>
+                  {modalId ? (
+                    <button
+                      onClick={() => setModalType(modalId)}
+                      className="text-left text-sm text-white/70 hover:text-white transition cursor-pointer"
+                    >
+                      {label}
+                    </button>
+                  ) : (
+                    <a href={href} className="text-sm text-white/70 hover:text-white transition">
+                      {label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

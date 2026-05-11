@@ -18,20 +18,20 @@ const features = [
     bgColor: 'bg-blue-50'
   },
   { 
-    name: 'Horario Extendido Sin Costo', 
-    description: 'Horario extendido sin costo hasta las 4:30 PM, adaptándonos a tu horario laboral.', 
+    name: 'Horario Extendido', 
+    description: 'Horario extendido hasta las 4:30 PM, adaptándonos a tu horario laboral.', 
     icon: <Clock className="h-6 w-6 text-indigo-600" />,
     bgColor: 'bg-indigo-50'
   },
   { 
     name: 'Comedor', 
-    description: 'Alimentación balanceada y nutritiva incluida en la colegiatura mensual.', 
+    description: 'Servicio de alimentos balanceados y nutritivos.', 
     icon: <Utensils className="h-6 w-6 text-orange-600" />,
     bgColor: 'bg-orange-50'
   },
   { 
-    name: 'Atención Personalizada', 
-    description: 'Grupos reducidos para garantizar atención individualizada a cada alumno.', 
+    name: 'Grupos reducidos', 
+    description: 'Para garantizar el aprendizaje del alumno.', 
     icon: <UserCheck className="h-6 w-6 text-emerald-600" />,
     bgColor: 'bg-emerald-50'
   },
@@ -48,14 +48,14 @@ const features = [
     bgColor: 'bg-purple-50'
   },
   { 
-    name: 'Seguro Médico Incluido', 
-    description: 'Seguro de gastos médicos mayores incluido en la inscripción inicial.', 
+    name: 'Seguro de accidentes escolares', 
+    description: 'Incluido en la matricula de nuestros alumnos.', 
     icon: <ShieldCheck className="h-6 w-6 text-cyan-600" />,
     bgColor: 'bg-cyan-50'
   },
   { 
-    name: 'Formación Integral', 
-    description: 'Educación que abarca aspectos académicos, emocionales, sociales y físicos.', 
+    name: 'Educación financiera y STEAM', 
+    description: 'Impulsamos el desarrollo del pensamiento lógico y decisiones financieras claves para el futuro.', 
     icon: <BookOpen className="h-6 w-6 text-slate-600" />,
     bgColor: 'bg-slate-50'
   },

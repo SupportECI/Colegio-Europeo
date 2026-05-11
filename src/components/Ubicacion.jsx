@@ -55,8 +55,8 @@ export default function UbicacionColegio() {
             </h3>
 
             <p className="text-sm text-slate-600 mb-8 leading-relaxed">
-              Ubicados en la <strong>Colonia Xamaipak</strong>, nos encontramos cerca de las canchas del ISSSTE, 
-              una zona residencial tranquila que facilita la llegada y salida de nuestros alumnos.
+              Ubicados en la <strong>Colonia Xamaipak</strong>, nos encontramos a espaldas de las clínicas del ISSSTE, 
+              en una zona residencial tranquila que facilita la llegada y salida de nuestros alumnos.
             </p>
 
             {/* Grid de Puntos Relevantes del Colegio */}
@@ -77,8 +77,8 @@ export default function UbicacionColegio() {
                   <ShieldCheck size={18} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-900">Zona Vigilada</p>
-                  <p className="text-[11px] text-slate-500">Seguridad 24/7</p>
+                  <p className="text-xs font-bold text-slate-900">Zona Segura</p>
+                  <p className="text-[11px] text-slate-500">CCTV 24/7</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ export default function UbicacionColegio() {
                   <Clock size={18} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-900">Horario Flexible</p>
+                  <p className="text-xs font-bold text-slate-900">Horario Extendido</p>
                   <p className="text-[11px] text-slate-500">Hasta las 4:30 PM</p>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function UbicacionColegio() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-900">Referencia</p>
-                  <p className="text-[11px] text-slate-500">Cerca canchas ISSSTE</p>
+                  <p className="text-[11px] text-slate-500">A espaldas de las clínicas del ISSSTE</p>
                 </div>
               </div>
 

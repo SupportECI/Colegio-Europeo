@@ -7,15 +7,26 @@ export default function FAQ() {
   const preguntas = [
     {
       pregunta: "¿Cuáles son los requisitos para la inscripción?",
-      respuesta: "Para inscribirse es necesario presentar acta de nacimiento original, CURP, certificado del nivel anterior y boleta de calificaciones. Contamos con un proceso sencillo y personalizado en nuestra oficina de admisiones."
+      titulo: "Para inscribirse es necesario presentar:",
+      // Al convertirlo en un arreglo separado por comas, React puede recorrerlo para crear la lista
+      respuesta: [
+        "Acta de nacimiento original",
+        "CURP",
+        "Certificado del nivel anterior",
+        "Boleta de calificaciones",
+        "Certificado Médico",
+        "INE de los tutores",
+        "Copia de cartilla de vacunación"
+      ],
+      nota: "Contamos con un proceso sencillo y personalizado en nuestra oficina de admisiones."
     },
     {
-      pregunta: "¿Tienen convenios para becas o descuentos?",
-      respuesta: "Sí, contamos con un programa de becas por excelencia académica y descuentos especiales por hermanos inscritos en la institución. Pregunta por nuestra convocatoria vigente."
+      pregunta: "¿Cuentan con alguna promoción?",
+      respuesta: "Sí, contamos con algunos descuentos especiales al inscribir  2 o más alumnos, pregunta por nuestra convocatoria vigente."
     },
     {
       pregunta: "¿El colegio cuenta con servicio de estancia o comedor?",
-      respuesta: "Ofrecemos horario extendido con talleres vespertinos. Los alumnos pueden traer sus alimentos o contratar el servicio de comedor que ofrece menús balanceados supervisados."
+      respuesta: "Si, los alumnos pueden traer sus alimentos o contratar el servicio de comedor que ofrece menús balanceados y supervisados."
     },
     {
       pregunta: "¿Dónde puedo adquirir los uniformes escolares?",
@@ -23,23 +34,14 @@ export default function FAQ() {
     },
     {
       pregunta: "¿Cuál es el enfoque pedagógico de la institución?",
-      respuesta: "Nuestro enfoque es bilingüe y constructivista, centrado en el desarrollo de competencias, valores humanos y el fomento del pensamiento crítico desde una edad temprana."
+      respuesta: "Nuestro enfoque es bilingüe, enseñamos matemáticas con el método Singapur, contamos con plataformas con microlearning & A.I."
     },
-    {
-      pregunta: "¿Cómo es la comunicación entre padres y maestros?",
-      respuesta: "Mantenemos una comunicación constante a través de nuestra plataforma digital, juntas periódicas y citas programadas para el seguimiento académico de cada alumno."
-    },
-    {
-      pregunta: "¿Cuentan con actividades extracurriculares?",
-      respuesta: "Contamos con una amplia oferta que incluye talleres de música, danza, fútbol, taekwondo y artes plásticas, diseñados para la formación integral de nuestros estudiantes."
-    }
   ];
 
   return (
     <section className="w-full py-20 bg-gray-50/50" id="faq">
       <div className="max-w-4xl mx-auto px-6">
         
-        {/* Header Elegante */}
         <div className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[4px] text-[#0E2976] font-bold mb-3 block">Preguntas Frecuentes</span>
           <h2 className="text-3xl font-bold text-gray-950 tracking-tight sm:text-4xl">
@@ -95,9 +97,33 @@ export default function FAQ() {
                 >
                   <div className="overflow-hidden">
                     <div className="py-6 px-8 pl-18"> 
-                      <p className="text-[15px] text-gray-700 leading-relaxed font-normal">
-                        {item.respuesta}
-                      </p>
+                      {/* LÓGICA CONDICIONAL: Si es arreglo (lista), se dibuja la cuadrícula. Si es texto, es párrafo */}
+                      {Array.isArray(item.respuesta) ? (
+                        <div className="space-y-3">
+                          {item.titulo && (
+                            <p className="text-[15px] text-gray-900 font-medium mb-3">
+                              {item.titulo}
+                            </p>
+                          )}
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                            {item.respuesta.map((req, idx) => (
+                              <div key={idx} className="flex items-start gap-2">
+                                <span className="text-red-600 font-bold text-[15px]">✓</span>
+                                <span className="text-[14px] sm:text-[15px] text-gray-700">{req}</span>
+                              </div>
+                            ))}
+                          </div>
+                          {item.nota && (
+                            <p className="text-[14px] text-gray-500 mt-4 leading-relaxed">
+                              {item.nota}
+                            </p>
+                          )}
+                        </div>
+                      ) : (
+                        <p className="text-[15px] text-gray-700 leading-relaxed font-normal">
+                          {item.respuesta}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

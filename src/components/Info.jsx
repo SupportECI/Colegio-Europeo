@@ -19,13 +19,6 @@ const bilingueFeatures = [
     glow: "hover:shadow-emerald-200/50",
   },
   {
-    icon: GraduationCap,
-    name: "Maestros Bilingües",
-    description: "Docentes certificados con enfoque global.",
-    gradient: "from-blue-500 to-blue-400",
-    glow: "hover:shadow-blue-200/50",
-  },
-  {
     icon: ScrollText,
     name: "Certificaciones",
     description: "Preparación para exámenes internacionales.",
@@ -63,7 +56,7 @@ export default function SistemaBilingueexcelencia() {
         </motion.div>
 
         {/* CARDS */}
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {bilingueFeatures.map((feature, i) => {
             const Icon = feature.icon;
 

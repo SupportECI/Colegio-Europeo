@@ -2,10 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   X,
+  Brain,
   CheckCircle2,
   Clock,
   Users,
-  Calendar,
   Smile,
   BookOpen,
   GraduationCap,
@@ -14,7 +14,8 @@ import {
   Shield,
   Star,
   Languages,
-  Activity
+  Activity,
+  Stethoscope,
 } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
 import maternalImg from '../assets/images/Maternal-1.jpg';
@@ -25,7 +26,7 @@ const posts = [
   {
     id: 1,
     title: "Maternal",
-    age: "1 a 3 años",
+    age: "1 a 2.5 años",
     icon: <Smile className="h-5 w-5 sm:h-6 sm:w-6" />,
     theme: {
       bg: "bg-orange-50",
@@ -34,21 +35,21 @@ const posts = [
       modalIcon: "bg-slate-900 text-white",
     },
     quickInfo: [
-      { icon: <Languages size={12}/>, text: "Bilingüe", color: "bg-blue-50 text-blue-400" },
-      { icon: <Activity size={12}/>, text: "Motricidad", color: "bg-pink-50 text-pink-400" },
-      { icon: <Shield size={12}/>, text: "Seguro", color: "bg-emerald-50 text-emerald-400" },
-      { icon: <Star size={12}/>, text: "Estimulación", color: "bg-purple-50 text-purple-400" }
+      { icon: <Languages size={12} />, text: "Inglés", color: "bg-blue-50 text-blue-400" },
+      { icon: <Activity size={12} />, text: "Motricidad", color: "bg-pink-50 text-pink-400" },
+      { icon: <Shield size={12} />, text: "Independencia", color: "bg-emerald-50 text-emerald-400" },
+      { icon: <Star size={12} />, text: "Estimulación", color: "bg-purple-50 text-purple-400" }
     ],
-    description: "Desarrollo de habilidades motoras, sociales y cognitivas a través del juego y actividades diseñadas para esta etapa crucial.",
-    benefits: ["Desarrollo de lenguaje bilingüe", "Motricidad fina y gruesa", "Estimulación de la creatividad", "Control de esfínteres", "Socialización temprana", "Rutinas y hábitos saludables"],
-    includes: ["Material didáctico manipulativo", "Clases de música y movimiento", "Área de juegos y exploración", "Comedor con menú balanceado", "Evaluación de desarrollo", "Talleres para padres"],
-    stats: { schedule: "7:00 - 15:00", capacity: "Máx. 15", cycle: "2025-2026" },
+    description: "Desarrollo de habilidades motoras, sociales y cognitivas a través del juego y actividades académicas para esta etapa crucial.",
+    benefits: ["Servicio de alimentos incluido", "Desarrollo de lenguaje", "Motricidad fina y gruesa", "Estimulación de la creatividad", "Control de esfínteres", "Socialización temprana", "Rutinas y hábitos saludables"],
+    includes: ["Material didáctico manipulativo", "Clases de música y danza", "Exploración y proyectos", "Comedor con menú balanceado", "Evaluación de desarrollo"],
+    stats: { schedule: "8:00 - 14:00", capacity: "Máx. 15", Stethoscope: "" },
     imageUrl: maternalImg,
   },
   {
     id: 2,
     title: "Preescolar",
-    age: "3 a 6 años",
+    age: "2.5 a 6 años",
     icon: <BookOpen className="h-5 w-5 sm:h-6 sm:w-6" />,
     theme: {
       bg: "bg-emerald-50",
@@ -57,15 +58,15 @@ const posts = [
       modalIcon: "bg-slate-900 text-white",
     },
     quickInfo: [
-      { icon: <Languages size={12}/>, text: "Inglés Diario", color: "bg-indigo-50 text-indigo-400" },
-      { icon: <Activity size={12}/>, text: "Danza", color: "bg-orange-50 text-orange-400" },
-      { icon: <Shield size={12}/>, text: "Médico", color: "bg-cyan-50 text-cyan-400" },
-      { icon: <Star size={12}/>, text: "Lógica", color: "bg-yellow-50 text-yellow-400" }
+      { icon: <Languages size={12} />, text: "Inglés Diario", color: "bg-indigo-50 text-indigo-400" },
+      { icon: <Activity size={12} />, text: "Danza", color: "bg-orange-50 text-orange-400" },
+      { icon: <Brain size={12} />, text: "Estimulación", color: "bg-cyan-50 text-cyan-400" },
+      { icon: <Star size={12} />, text: "Pensamiento Lógico", color: "bg-yellow-50 text-yellow-400" }
     ],
-    description: "Preparación académica y social completa para la primaria con enfoque bilingüe. Desarrollamos habilidades de lectoescritura y pensamiento matemático.",
-    benefits: ["Programa bilingüe certificado", "Lectoescritura en ambos idiomas", "Pensamiento matemático y lógico", "Educación socioemocional", "Preparación para primaria", "Habilidades artísticas y deportivas"],
+    description: "Preparación académica y social completa con enfoque bilingüe. Desarrollamos habilidades de lectoescritura y pensamiento matemático.",
+    benefits: ["Preparación a programa bilingüe", "Lectoescritura en ambos idiomas", "Pensamiento lógico-matemático", "Preparación para primaria", "Habilidades artísticas y deportivas"],
     includes: ["Libros y materiales didácticos", "Clases de inglés diarias", "Educación física y danza", "Talleres de ciencia y tecnología", "Comedor supervisado", "Eventos culturales y deportivos"],
-    stats: { schedule: "7:00 - 14:00", capacity: "Máx. 20", cycle: "2025-2026" },
+    stats: { schedule: "7:30 - 14:15", capacity: "Máx. 15" },
     imageUrl: preescolarImg,
   },
   {
@@ -80,15 +81,15 @@ const posts = [
       modalIcon: "bg-slate-900 text-white",
     },
     quickInfo: [
-      { icon: <Languages size={12}/>, text: "Cambridge", color: "bg-rose-50 text-rose-400" },
-      { icon: <Activity size={12}/>, text: "Robótica", color: "bg-violet-50 text-violet-400" },
-      { icon: <Shield size={12}/>, text: "Liderazgo", color: "bg-sky-50 text-sky-400" },
-      { icon: <Star size={12}/>, text: "Ciencias", color: "bg-green-50 text-green-400" }
+      { icon: <Languages size={12} />, text: "Bilingüe", color: "bg-rose-50 text-rose-400" },
+      { icon: <Activity size={12} />, text: "Finanzas", color: "bg-violet-50 text-violet-400" },
+      { icon: <Shield size={12} />, text: "Liderazgo", color: "bg-sky-50 text-sky-400" },
+      { icon: <Star size={12} />, text: "Ciencias", color: "bg-green-50 text-green-400" }
     ],
     description: "Educación integral con excelencia académica bilingüe. Preparamos estudiantes con pensamiento crítico y dominio del inglés.",
-    benefits: ["Programa bilingüe de alto nivel", "Certificaciones Cambridge", "Pensamiento crítico y creativo", "Uso de tecnología educativa", "Formación en valores", "Preparación para secundaria"],
-    includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Laboratorio de ciencias", "Educación física y artes", "Robótica y programación", "Actividades extraescolares"],
-    stats: { schedule: "7:00 - 14:30", capacity: "Máx. 25", cycle: "2025-2026" },
+    benefits: ["Pensamiento crítico y creativo", "Uso de tecnología educativa", "Liderazgo y Finanzas", "Preparación para secundaria", "Constancia de nivel de Inglés (MCER)"],
+    includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Plataformas Educativas", "Educación física y artes", "Matemáticas con Método Singapur"],
+    stats: { schedule: "7:30 - 14:30", capacity: "Máx. 18" },
     imageUrl: primariaImg,
   },
 ];
@@ -162,12 +163,12 @@ export default function NivelesEducativos() {
       <AnimatePresence>
         {selectedPost && (
           <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               onClick={() => setSelectedPost(null)}
               className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"
             />
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
@@ -175,7 +176,7 @@ export default function NivelesEducativos() {
             >
               {/* Botón cerrar más grande para pulgares en móvil */}
               <button onClick={() => setSelectedPost(null)} className="absolute right-4 top-4 p-2 text-gray-400 hover:text-gray-600 focus:outline-none">
-                <X size={24}/>
+                <X size={24} />
               </button>
 
               <div className="flex items-center gap-4 mb-6 pr-8">
@@ -219,29 +220,45 @@ export default function NivelesEducativos() {
               </div>
 
               {/* Stats en grid ajustable */}
-              <div className="mt-8 grid grid-cols-3 gap-2 sm:gap-4">
+              <div className={`mt-8 grid gap-2 sm:gap-4 ${Object.keys(selectedPost.stats).length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
                 <div className="rounded-xl bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
                   <Clock className="h-4 w-4 mx-auto mb-1 text-gray-400" />
                   <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Horario</p>
                   <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.schedule}</p>
                 </div>
+
                 <div className="rounded-xl bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
                   <Users className="h-4 w-4 mx-auto mb-1 text-gray-400" />
                   <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Cupo</p>
                   <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.capacity}</p>
                 </div>
-                <div className="rounded-xl bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
-                  <Calendar className="h-4 w-4 mx-auto mb-1 text-gray-400" />
-                  <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Ciclo</p>
-                  <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.cycle}</p>
-                </div>
+
+                {/* Solo se muestra si existe "Stethoscope" en los stats (Ej. Maternal) */}
+                {selectedPost.stats.Stethoscope !== undefined && (
+                  <div className="rounded-xl gap-4 bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
+                    <Stethoscope className="h-4 w-4 mx-auto mb-1 text-gray-400" />
+                    <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Enfermera</p>
+                    {/* Si mandaste "", mostrará "Sí" para que no quede el texto vacío */}
+                    <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.Stethoscope || "Sí"}</p>
+                  </div>
+                )}
+
+                {/* Solo se muestra si existe "cycle" en los stats (Ej. Primaria) */}
+                {selectedPost.stats.cycle !== undefined && (
+                  <div className="rounded-xl gap-4 bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
+                    <GraduationCap className="h-4 w-4 mx-auto mb-1 text-gray-400" />
+                    <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Ciclo</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.cycle}</p>
+                  </div>
+                )}
               </div>
 
               <div className="mt-8 mb-2 sm:mb-0">
-                <a 
+                <a
                   target="_blank"
-                  href="https://wa.me/tunumerowhatsapp" 
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c51c1c] py-4 text-sm sm:text-base text-white font-bold shadow-lg transition-transform active:scale-95"
+                  rel="noopener noreferrer"
+                  href={`https://wa.me/529616066550?text=${encodeURIComponent(`Hola, vi su página web, quiero más información de ${selectedPost.title.toLowerCase()}.`)}`}
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c51c1c] py-4 text-sm sm:text-base text-white font-bold shadow-lg transition-transform active:scale-95 hover:bg-red-700"
                 >
                   <MessageCircle className="h-5 w-5" />
                   Más información
