@@ -6,7 +6,7 @@ import AboutUs from './components/About'
 import Cards from './components/Cards'
 import Info from './components/Info'
 import Desarrollo from './components/Desarrollo'
-import Experiencias from './components/Experiencias'
+import FacebookFeed from './components/FacebookFeed'
 import Galeria from './components/Galeria'
 import Ubicacion from './components/Ubicacion'
 import FAQ from './components/FAQ'
@@ -65,7 +65,7 @@ function App() {
         </>
       ) : vistaActiva === 'experiencias' ? (
         <>
-          <Experiencias />
+          <FacebookFeed />
           <WhatsAppButton />
         </>
       ) : (

@@ -1,0 +1,156 @@
+/* ============================================
+   FACEBOOK FEED - SAAS PREMIUM & ULTRA CLEAN
+   ============================================ */
+
+:root {
+  --canvas-bg: #f8fafc; /* Gris ultra claro para el fondo */
+  --card-bg: #ffffff;
+  --text-main: #0f172a; /* Slate 900 */
+  --text-muted: #64748b; /* Slate 500 */
+  --accent: #0E2976; /* Tu azul corporativo */
+  --accent-light: #e0e7ff; /* Azul muy pálido para etiquetas */
+  
+  /* Sombra estilo "Aire" (muy difusa) */
+  --shadow-premium: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* CONTENEDOR - Centrado y con aire */
+.fb-container {
+  padding: 4rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+}
+
+/* GRID UNIFORME - Limpio y espaciado */
+.fb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem; /* Espacio generoso entre tarjetas */
+}
+
+/* TARJETA INDIVIDUAL (El cambio principal) */
+.fb-post {
+  background: var(--card-bg);
+  border: 1px solid #e2e8f0; /* Border muy fino */
+  border-radius: 1rem; /* Menos redondo, más profesional */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-premium);
+  position: relative;
+  overflow: hidden;
+}
+
+.fb-post:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd5e1;
+}
+
+/* IMAGEN (Contenedor con Aspect Ratio) */
+.fb-post-image {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Proporción áurea moderna */
+  overflow: hidden;
+  position: relative;
+}
+
+.fb-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.fb-post:hover .fb-post-image img {
+  transform: scale(1.05);
+}
+
+/* CUERPO DE LA TARJETA (Puro aire) */
+.fb-post-body {
+  padding: 1.75rem; /* Mucho padding interno */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.25rem;
+}
+
+/* --- MINI ETIQUETAS (TAGS) --- */
+.fb-post-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: -0.25rem;
+}
+
+.fb-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 50px; /* Estilo píldora */
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Si es video, cambia de color */
+.fb-tag.video {
+  background-color: #fef3c7; /* Ámbar claro */
+  color: #b45309;
+}
+
+/* TEXTO (Más limpio y legible) */
+.fb-post-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 400;
+  
+  /* Recorte a 3 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* FOOTER (Fino y minimalista) */
+.fb-post-footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* FECHA (Con ícono si quieres en React) */
+.fb-post-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* BOTÓN (Outline Moderno) */
+.fb-post-btn {
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fb-post-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: scale(1.03);
+}
