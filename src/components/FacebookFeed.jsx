@@ -8,7 +8,7 @@ const FacebookFeed = () => {
 
   /*Credenciales de acceso - Facebook*/
   const PAGE_ID = '357237514146983';
-  const TOKEN = 'EAASQDJ9TK0EBReghpxiN4DmJ7hMoI70KkAGvkU3LZCcgaVwIPsTTNhqNoUCF9D6EX587Aym7jvuRdw5nuc528Lo6OnzLEHn037l46hCSbM10EZCyRC31HqFk89ILzvlqd0ppUGCMZButaBvGY4K9wKwmlcGqvMZCMZBBqioqevPP8OuXtiOvxGpsFe7jhAYiqg4ftSm7lZCm4RhZC7i7YAS0TXiyUYxlhvYN0klf7x8TZBi63NaAYKcMK6eDYnqCcwZDZD';
+  const TOKEN = 'EAASQDJ9TK0EBRXp0swNZAskkp4tiBZA55Hyw6WjLaqGjuz1dZCJjZBZBgE0SpPfgIZBcR42zCBzjAMyhSpBC84Ely6lZCRw2mxBX7wZAbxl0qebzcn3pCQPRsVHGNgjSrNqpgXxDo44fcNUjI3PZCV259cZC2685nkGsEdZA0HsaRXRZBjD6vqQLetdAoyusRDZCuvjmSNpOJ8GquZAjns3xbqZBew5';
   const API_VERSION = 'v21.0';
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const FacebookFeed = () => {
       try {
         setLoading(true);
         
-        const url = `https://graph.facebook.com/${API_VERSION}/${PAGE_ID}/feed?fields=id,message,attachments{media,url,type},permalink_url,created_time,story&limit=6&access_token=${TOKEN}`;
+        const url = `https://graph.facebook.com/${API_VERSION}/${PAGE_ID}/feed?fields=id,message,attachments{media,url,type},permalink_url,created_time,story&limit=21&access_token=${TOKEN}`;
         
         console.log('📱 Cargando publicaciones...');
         const response = await fetch(url);

@@ -16,14 +16,14 @@ import {
   Menu,
   X,
   Image as ImageIcon,
-  MapPin,
+  Building2,
 } from 'lucide-react'
 
 const navigation = [
   { name: 'Inicio', href: '#', icon: House },
   { name: 'Experiencias', href: '#experiencias', icon: PersonStanding },
   { name: 'Galería', href: '#galeria', icon: ImageIcon },
-  {/*{ name: 'Ubicación', href: '#ubicacion', icon: MapPin },*/}
+  { name: 'Nosotros', href: '#nosotros', icon: Building2 }
 ]
 
 export default function Navbar() {

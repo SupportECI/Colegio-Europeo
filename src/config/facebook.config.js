@@ -4,14 +4,14 @@
 
 export const FACEBOOK_CONFIG = {
   PAGE_ID: '452806151429699',
-  TOKEN: 'EAAdShPd7GKYBRSIjeYeRIZAFaAs02YyzjHVPuvykoyfNURl3BxUfKbTx3a8FCKw4vcvxUSTaEMXZAlch4w5Jt2FRIsr5RFupwVS7M7dgaYEHUiZCSEhYfdKbhpZAsZCWPjBGnbPZCPcvIZAXJ954v5ge3YPGt9NQQLfpvw3CjrWFOBv4iXDLgzuBWjLTpq35wHRzj74VUahnw4843KP19F8vzpLRe7qSI2PXkqjMZA87ZCmZADBc28IT4DuU50',
+  TOKEN: 'EAASQDJ9TK0EBRXp0swNZAskkp4tiBZA55Hyw6WjLaqGjuz1dZCJjZBZBgE0SpPfgIZBcR42zCBzjAMyhSpBC84Ely6lZCRw2mxBX7wZAbxl0qebzcn3pCQPRsVHGNgjSrNqpgXxDo44fcNUjI3PZCV259cZC2685nkGsEdZA0HsaRXRZBjD6vqQLetdAoyusRDZCuvjmSNpOJ8GquZAjns3xbqZBew5',
   API_VERSION: 'v21.0',
   FIELDS: ['id', 'message', 'full_picture', 'permalink_url', 'created_time', 'story', 'type'],
-  LIMIT: 6,
+  LIMIT: 8,
 };
 
 export const isTokenConfigured = () => {
-  return FACEBOOK_CONFIG.TOKEN && FACEBOOK_CONFIG.TOKEN.length > 10;
+  return FACEBOOK_CONFIG.TOKEN && FACEBOOK_CONFIG.TOKEN.length > 15;
 };
 
 export const getFacebookApiUrl = () => {
