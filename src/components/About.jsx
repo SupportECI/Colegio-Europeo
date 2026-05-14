@@ -56,9 +56,6 @@ const AboutUs = () => {
         </svg>
       </div>
 
-      {/* ========================================================= */}
-      {/* TRANSICIÓN SUAVE INFERIOR (Evita el corte de golpe)       */}
-      {/* ========================================================= */}
       <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-t from-white to-transparent z-0"></div>
 
 

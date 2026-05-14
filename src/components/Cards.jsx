@@ -98,8 +98,38 @@ export default function NivelesEducativos() {
   const [selectedPost, setSelectedPost] = useState(null);
 
   return (
-    <div id="niveles" className="scroll-mt-45 bg-white py-10 px-4 sm:px-6 lg:px-8" id="niveles">
-      <div className="mx-auto max-w-7xl">
+    <section id="niveles" className="relative py-16 md:py-28 w-full bg-white overflow-hidden" id="niveles">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none leading-[0]">
+        <svg
+          className="w-full h-full block" 
+          viewBox="0 0 1440 1000"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Capa 1: Ola más clara y alta */}
+          <path
+            fill="#394c7a"
+            fillOpacity="0.1"
+            d="M0,350 C400,200 800,500 1440,300 L1440,1000 L0,1000 Z"
+          />
+          {/* Capa 2: Ola media */}
+          <path
+            fill="#394c7a"
+            fillOpacity="0.3"
+            d="M0,450 C450,300 850,600 1440,400 L1440,1000 L0,1000 Z"
+          />
+          {/* Capa 3: Ola principal sólida (Frente) */}
+          <path
+            fill="#394c7a"
+            fillOpacity="1"
+            d="M0,550 C500,400 900,700 1440,500 L1440,1000 L0,1000 Z"
+          />
+        </svg>
+      </div>
+
+      <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-t from-white to-transparent z-0"></div>
+
+      <div className="mx-auto max-w-7xl relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="mb-8 text-center lg:text-left">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 lg:text-4xl">
             Niveles Educativos
@@ -268,6 +298,6 @@ export default function NivelesEducativos() {
           </div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   );
 }

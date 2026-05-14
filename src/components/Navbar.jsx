@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 
 const navigation = [
-  { name: 'Inicio', href: '#', icon: House },
+  { name: 'Inicio', href: '/', icon: House },
   { name: 'Experiencias', href: '#experiencias', icon: PersonStanding },
   { name: 'Galería', href: '#galeria', icon: ImageIcon },
   { name: 'Nosotros', href: '#nosotros', icon: Building2 }
@@ -37,7 +37,7 @@ export default function Navbar() {
         
         {/* LOGO */}
         <div className="flex flex-1">
-          <a href="#inicio" className="flex items-center group">
+          <a href="/" className="flex items-center group">
             <img
               src={navbarLogo}
               alt="Logo"

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import FloatingBubbles from "./BubbleMotion"; // Importación del componente de burbujas
 
 export default function FAQ() {
   const [activo, setActivo] = useState(null);
@@ -22,7 +23,7 @@ export default function FAQ() {
     },
     {
       pregunta: "¿Cuentan con alguna promoción?",
-      respuesta: "Sí, contamos con algunos descuentos especiales al inscribir  2 o más alumnos, pregunta por nuestra convocatoria vigente."
+      respuesta: "Sí, contamos con algunos descuentos especiales al inscribir 2 o más alumnos, pregunta por nuestra convocatoria vigente."
     },
     {
       pregunta: "¿El colegio cuenta con servicio de estancia o comedor?",
@@ -39,8 +40,11 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="w-full py-20 bg-gray-50/50" id="faq">
-      <div className="max-w-4xl mx-auto px-6">
+    <section className="relative w-full py-20 bg-white overflow-hidden" id="faq">
+      
+      <FloatingBubbles />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         
         <div className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[4px] text-[#0E2976] font-bold mb-3 block">Preguntas Frecuentes</span>
@@ -53,7 +57,6 @@ export default function FAQ() {
           <div className="h-px w-20 bg-[#0E2976]/20 mt-8 mx-auto"></div>
         </div>
 
-        {/* Lista de Acordeón */}
         <div className="space-y-4"> 
           {preguntas.map((item, index) => {
             const abierto = activo === index;
@@ -61,7 +64,7 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className={`transition-all duration-300 rounded-xl bg-white border ${
+                className={`transition-all duration-300 rounded-xl bg-white/90 backdrop-blur-sm border ${
                   abierto ? "shadow-lg border-gray-200" : "border-gray-100 hover:border-gray-200 shadow-sm"
                 }`}
               >
@@ -92,12 +95,11 @@ export default function FAQ() {
                 {/* Contenedor de Respuesta */}
                 <div
                   className={`grid transition-all duration-500 ease-in-out overflow-hidden ${
-                    abierto ? "grid-rows-[1fr] opacity-100 bg-gray-50/50 rounded-b-xl border-t border-gray-100" : "grid-rows-[0fr] opacity-0"
+                    abierto ? "grid-rows-[1fr] opacity-100 bg-gray-50/40 rounded-b-xl border-t border-gray-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
                     <div className="py-6 px-8 pl-18"> 
-                      {/* LÓGICA CONDICIONAL: Si es arreglo (lista), se dibuja la cuadrícula. Si es texto, es párrafo */}
                       {Array.isArray(item.respuesta) ? (
                         <div className="space-y-3">
                           {item.titulo && (
@@ -133,7 +135,7 @@ export default function FAQ() {
         </div>
 
         {/* Sección de Contacto Directo */}
-        <div className="mt-16 text-center pt-10 border-t border-gray-100">
+        <div className="mt-16 text-center pt-10 border-t border-gray-200">
           <p className="text-sm text-gray-600 font-medium">
             ¿Tienes otra duda? <span className="text-[#0E2976] cursor-pointer hover:underline">Contáctanos directamente por WhatsApp</span> para una atención personalizada.
           </p>

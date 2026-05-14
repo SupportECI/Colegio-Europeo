@@ -1,6 +1,5 @@
 import { MapPin, Navigation, ShieldCheck, Clock, School, ExternalLink } from "lucide-react";
 import colegioImage from '../assets/images/Colegio.png'
-// Ubicación component
 
 export default function UbicacionColegio() {
   return (
@@ -24,9 +23,7 @@ export default function UbicacionColegio() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* Imagen con Badge de Ubicación Real */}
-          <div 
-            className="relative"
-          >
+          <div className="relative">
             <img
               src={colegioImage}
               alt="Instalaciones Centro Educativo Europeo"
@@ -46,9 +43,7 @@ export default function UbicacionColegio() {
           </div>
 
           {/* Información Detallada basada en la imagen de referencia */}
-          <div
-            className="flex flex-col h-full justify-center"
-          >
+          <div className="flex flex-col h-full justify-center">
             <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
               <School className="text-blue-600" size={24} />
               Entorno Seguro y Cercano
@@ -104,18 +99,24 @@ export default function UbicacionColegio() {
 
             </div>
 
-            {/* Botón de Google Maps Proporcionado y Discreto */}
+            {/* Botón de Google Maps con efecto Glowing Gradient Border */}
             <div className="mt-8">
-              <a
-                href="https://maps.google.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0E2976]  text-white px-6 py-3.5 rounded-xl text-xs font-bold transition-all shadow-lg active:scale-95"
-              >
-                <MapPin size={16} className="text-red-500" />
-                VER EN GOOGLE MAPS
-                <ExternalLink size={14} className="opacity-40" />
-              </a>
+              <div className="relative inline-block group cursor-pointer">
+                {/* Capa de resplandor difuminado (Glow Effect) */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                
+                {/* Botón Principal (Se mantiene con tu diseño original, pero relativo para estar por encima del resplandor) */}
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center gap-2 bg-[#0E2976] text-white px-6 py-3.5 rounded-xl text-xs font-bold transition-all shadow-lg active:scale-95"
+                >
+                  <MapPin size={16} className="text-red-500" />
+                  VER EN GOOGLE MAPS
+                  <ExternalLink size={14} className="opacity-40" />
+                </a>
+              </div>
             </div>
 
           </div>
