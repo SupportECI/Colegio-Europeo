@@ -6,19 +6,23 @@ const FacebookFeed = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /*Credenciales de acceso - Facebook*/
-  const PAGE_ID = '357237514146983';
-  const TOKEN = 'EAASQDJ9TK0EBRXp0swNZAskkp4tiBZA55Hyw6WjLaqGjuz1dZCJjZBZBgE0SpPfgIZBcR42zCBzjAMyhSpBC84Ely6lZCRw2mxBX7wZAbxl0qebzcn3pCQPRsVHGNgjSrNqpgXxDo44fcNUjI3PZCV259cZC2685nkGsEdZA0HsaRXRZBjD6vqQLetdAoyusRDZCuvjmSNpOJ8GquZAjns3xbqZBew5';
-  const API_VERSION = 'v21.0';
+  const apiKey = import.meta.env.VITE_API_VERSION;
+  const pageId = import.meta.env.VITE_PAGE_ID;
+  const token = import.meta.env.VITE_TOKEN;
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        
-        const url = `https://graph.facebook.com/${API_VERSION}/${PAGE_ID}/feed?fields=id,message,attachments{media,url,type},permalink_url,created_time,story&limit=21&access_token=${TOKEN}`;
-        
+
+        const url = `https://graph.facebook.com/${apiKey}/${pageId}/feed?fields=id,message,attachments{media,url,type},permalink_url,created_time,story&limit=21&access_token=${token}`;
+
         console.log('📱 Cargando publicaciones...');
+
+        console.log('API:', import.meta.env.VITE_API_VERSION);
+        console.log('PAGE:', import.meta.env.VITE_PAGE_ID);
+        console.log('TOKEN:', import.meta.env.VITE_TOKEN);
+
         const response = await fetch(url);
         const data = await response.json();
 
