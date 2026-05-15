@@ -24,10 +24,7 @@ const AboutUs = () => {
 
   return (
     <section id="nosotros" className="relative py-16 md:py-28 w-full bg-white overflow-hidden" >
-      
-      {/* ========================================================= */}
-      {/* FONDO DE OLAS EN CAPAS (Ocupa 100% de alto y ancho)       */}
-      {/* ========================================================= */}
+
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none leading-[0]">
         <svg
           className="w-full h-full block" 
@@ -37,7 +34,7 @@ const AboutUs = () => {
         >
           {/* Capa 1: Ola más clara y alta */}
           <path
-            fill="#c32945"
+            fill="#C32945"
             fillOpacity="0.1"
             d="M0,350 C400,200 800,500 1440,300 L1440,1000 L0,1000 Z"
           />

@@ -108,19 +108,19 @@ export default function NivelesEducativos() {
         >
           {/* Capa 1: Ola más clara y alta */}
           <path
-            fill="#394c7a"
+            fill="#2F2FE4"
             fillOpacity="0.1"
             d="M0,350 C400,200 800,500 1440,300 L1440,1000 L0,1000 Z"
           />
           {/* Capa 2: Ola media */}
           <path
-            fill="#394c7a"
+            fill="#162E93"
             fillOpacity="0.3"
             d="M0,450 C450,300 850,600 1440,400 L1440,1000 L0,1000 Z"
           />
           {/* Capa 3: Ola principal sólida (Frente) */}
           <path
-            fill="#394c7a"
+            fill="#1A1953"
             fillOpacity="1"
             d="M0,550 C500,400 900,700 1440,500 L1440,1000 L0,1000 Z"
           />
@@ -266,10 +266,10 @@ export default function NivelesEducativos() {
                 {/* Solo se muestra si existe "Stethoscope" en los stats (Ej. Maternal) */}
                 {selectedPost.stats.Stethoscope !== undefined && (
                   <div className="rounded-xl gap-4 bg-gray-50 p-2 sm:p-3 text-center border border-gray-100">
-                    <Stethoscope className="h-4 w-4 mx-auto mb-1 text-gray-400" />
+                    <Stethoscope className="h-4 w-4 mx-auto mb-1 text-gray-400 mt-2" />
                     <p className="text-[8px] sm:text-[10px] font-bold text-gray-500 uppercase">Enfermera</p>
                     {/* Si mandaste "", mostrará "Sí" para que no quede el texto vacío */}
-                    <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.Stethoscope || "Sí"}</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-slate-800">{selectedPost.stats.Stethoscope || ""}</p>
                   </div>
                 )}
 

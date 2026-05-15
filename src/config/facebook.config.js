@@ -3,8 +3,8 @@
 // Este archivo se mantiene solo como respaldo
 
 export const FACEBOOK_CONFIG = {
-  PAGE_ID: '452806151429699',
-  TOKEN: 'EAASQDJ9TK0EBRXp0swNZAskkp4tiBZA55Hyw6WjLaqGjuz1dZCJjZBZBgE0SpPfgIZBcR42zCBzjAMyhSpBC84Ely6lZCRw2mxBX7wZAbxl0qebzcn3pCQPRsVHGNgjSrNqpgXxDo44fcNUjI3PZCV259cZC2685nkGsEdZA0HsaRXRZBjD6vqQLetdAoyusRDZCuvjmSNpOJ8GquZAjns3xbqZBew5',
+  PAGE_ID: '206978189701672',
+  TOKEN: 'EAAeM5afZAOlsBReUVhfZCLxvJ2VeFRGtaZCOmNH7K6IsmzQMlkwLX3MTyRfVXuv9ZBrDdFW39unM7ZAla94s46ZAaDAxdDrHpGx48hFFmcwdZAm60qJIZAGEztewdsVEI8aZAIlZABTztl0bDm5vPqCR1ZCMaC3IkQtyxX3lqSmLN2g42VhAXGl3ZB1LZBgxTRyvlpr3FT4KVpcgZCLfuQzKLKIbnWcJkZD',
   API_VERSION: 'v21.0',
   FIELDS: ['id', 'message', 'full_picture', 'permalink_url', 'created_time', 'story', 'type'],
   LIMIT: 8,

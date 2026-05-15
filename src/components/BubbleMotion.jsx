@@ -10,9 +10,9 @@ const FloatingBubbles = () => {
       id: i,
       size: Math.random() * 60 + 20, // Tamaño entre 20px y 80px
       left: `${Math.random() * 100}%`, // Posición horizontal aleatoria
-      color: ["#B32C3A", "#364966"][Math.floor(Math.random() * 2)],
-      duration: Math.random() * 15 + 10, // Tiempo de subida
-      delay: Math.random() * 5, // Retraso inicial
+      color: ["#0E2976", "#C32945"][Math.floor(Math.random() * 2)],
+      duration: Math.random() * 25 + 10, // Tiempo de subida
+      delay: Math.random() * 1, // Retraso inicial
     }));
     setBubbles(newBubbles);
   }, []);
@@ -22,14 +22,14 @@ const FloatingBubbles = () => {
       className="absolute inset-0 overflow-hidden pointer-events-none z-0"
       style={{
         // Desvanecimiento suave en los últimos 40px superiores
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0px, black 40px)',
-        maskImage: 'linear-gradient(to bottom, transparent 0px, black 40px)'
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0px, black 60px)',
+        maskImage: 'linear-gradient(to bottom, transparent 0px, black 60px)'
       }}
     >
       {bubbles.map((bubble) => (
         <motion.div
           key={bubble.id}
-          className="absolute rounded-full opacity-40" 
+          className="absolute rounded-full opacity-20" 
           style={{
             width: bubble.size,
             height: bubble.size,

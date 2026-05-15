@@ -27,22 +27,26 @@ function App() {
       } else if (hash === '#experiencias') {
         setVistaActiva('experiencias');
       } else {
+        // Volver a vista inicio para cualquier otro hash
         setVistaActiva('inicio');
       }
 
-      // Scroll suave al elemento
+      // Scroll suave al elemento después de cambiar vista
       if (hash) {
-        const elemento = document.querySelector(hash);
-        if (elemento) {
-          setTimeout(() => {
+        setTimeout(() => {
+          const elemento = document.querySelector(hash);
+          if (elemento) {
             elemento.scrollIntoView({ behavior: 'smooth' });
-          }, 0);
-        }
+          } else {
+            // Si no encuentra el elemento, scroll al top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }, 100);
       }
     };
 
     window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Ejecutar al cargar la página
+    handleHashChange(); 
 
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);

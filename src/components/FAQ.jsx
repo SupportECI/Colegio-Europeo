@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import FloatingBubbles from "./BubbleMotion"; // Importación del componente de burbujas
+import FloatingBubbles from "./BubbleMotion"; 
 
 export default function FAQ() {
   const [activo, setActivo] = useState(null);
