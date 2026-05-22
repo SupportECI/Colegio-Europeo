@@ -9,7 +9,6 @@ export default function FAQ() {
     {
       pregunta: "¿Cuáles son los requisitos para la inscripción?",
       titulo: "Para inscribirse es necesario presentar:",
-      // Al convertirlo en un arreglo separado por comas, React puede recorrerlo para crear la lista
       respuesta: [
         "Acta de nacimiento original",
         "CURP",
@@ -42,7 +41,33 @@ export default function FAQ() {
   return (
     <section className="relative w-full py-20 bg-white overflow-hidden" id="faq">
       
-      <FloatingBubbles />
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none leading-[0]">
+        <svg
+          className="w-full h-full block" 
+          viewBox="0 0 1440 1000"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Capa 1: Ola más clara y alta */}
+          <path
+            fill="#2F2FE4"
+            fillOpacity="0.1"
+            d="M0,350 C400,200 800,500 1440,300 L1440,1000 L0,1000 Z"
+          />
+          {/* Capa 2: Ola media */}
+          <path
+            fill="#162E93"
+            fillOpacity="0.3"
+            d="M0,450 C450,300 850,600 1440,400 L1440,1000 L0,1000 Z"
+          />
+          {/* Capa 3: Ola principal sólida (Frente) */}
+          <path
+            fill="#0E2976"
+            fillOpacity="1"
+            d="M0,550 C500,400 900,700 1440,500 L1440,1000 L0,1000 Z"
+          />
+        </svg>
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         
@@ -136,8 +161,8 @@ export default function FAQ() {
 
         {/* Sección de Contacto Directo */}
         <div className="mt-16 text-center pt-10 border-t border-gray-200">
-          <p className="text-sm text-gray-600 font-medium">
-            ¿Tienes otra duda? <span className="text-[#0E2976] cursor-pointer hover:underline">Contáctanos directamente por WhatsApp</span> para una atención personalizada.
+          <p className="text-sm text-white font-medium">
+            ¿Tienes otra duda? Contáctanos directamente por <span className="text-[#29C345] cursor-pointer hover:underline">WhatsApp</span> para una atención personalizada.
           </p>
         </div>
 

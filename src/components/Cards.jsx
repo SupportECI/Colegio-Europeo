@@ -18,9 +18,9 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import maternalImg from '../assets/images/Maternal-1.jpg';
-import preescolarImg from '../assets/images/Presscolar1.jpg';
-import primariaImg from '../assets/images/Primaria1.jpg';
+import maternalWebp from '../assets/images/Maternal.webp';
+import preescolarWebp from '../assets/images/Preescolar.webp';
+import primariaWebp from '../assets/images/Primaria.webp';
 
 const posts = [
   {
@@ -44,7 +44,7 @@ const posts = [
     benefits: ["Servicio de alimentos incluido", "Desarrollo de lenguaje", "Motricidad fina y gruesa", "Estimulación de la creatividad", "Control de esfínteres", "Socialización temprana", "Rutinas y hábitos saludables"],
     includes: ["Material didáctico manipulativo", "Clases de música y danza", "Exploración y proyectos", "Comedor con menú balanceado", "Evaluación de desarrollo"],
     stats: { schedule: "8:00 - 14:00", capacity: "Máx. 15", Stethoscope: "" },
-    imageUrl: maternalImg,
+    imageUrl: maternalWebp,
   },
   {
     id: 2,
@@ -67,7 +67,7 @@ const posts = [
     benefits: ["Preparación a programa bilingüe", "Lectoescritura en ambos idiomas", "Pensamiento lógico-matemático", "Preparación para primaria", "Habilidades artísticas y deportivas"],
     includes: ["Libros y materiales didácticos", "Clases de inglés diarias", "Educación física y danza", "Talleres de ciencia y tecnología", "Comedor supervisado", "Eventos culturales y deportivos"],
     stats: { schedule: "7:30 - 14:15", capacity: "Máx. 15" },
-    imageUrl: preescolarImg,
+    imageUrl: preescolarWebp,
   },
   {
     id: 3,
@@ -90,7 +90,7 @@ const posts = [
     benefits: ["Pensamiento crítico y creativo", "Uso de tecnología educativa", "Liderazgo y Finanzas", "Preparación para secundaria", "Constancia de nivel de Inglés (MCER)"],
     includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Plataformas Educativas", "Educación física y artes", "Matemáticas con Método Singapur"],
     stats: { schedule: "7:30 - 14:30", capacity: "Máx. 18" },
-    imageUrl: primariaImg,
+    imageUrl: primariaWebp,
   },
 ];
 
@@ -99,33 +99,6 @@ export default function NivelesEducativos() {
 
   return (
     <section id="niveles" className="relative py-16 md:py-28 w-full bg-white overflow-hidden" id="niveles">
-      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none leading-[0]">
-        <svg
-          className="w-full h-full block" 
-          viewBox="0 0 1440 1000"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Capa 1: Ola más clara y alta */}
-          <path
-            fill="#2F2FE4"
-            fillOpacity="0.1"
-            d="M0,350 C400,200 800,500 1440,300 L1440,1000 L0,1000 Z"
-          />
-          {/* Capa 2: Ola media */}
-          <path
-            fill="#162E93"
-            fillOpacity="0.3"
-            d="M0,450 C450,300 850,600 1440,400 L1440,1000 L0,1000 Z"
-          />
-          {/* Capa 3: Ola principal sólida (Frente) */}
-          <path
-            fill="#1A1953"
-            fillOpacity="1"
-            d="M0,550 C500,400 900,700 1440,500 L1440,1000 L0,1000 Z"
-          />
-        </svg>
-      </div>
 
       <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-t from-white to-transparent z-0"></div>
 

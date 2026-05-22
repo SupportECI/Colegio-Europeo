@@ -5,7 +5,7 @@ import { number } from 'prop-types';
 import sep from '/Logos/SEP_Logo.svg'
 import algebraix from '/Logos/Algebraix_Escolar.png'
 import luca from "/Logos/Logo-Luca.svg"
-import banner from "/banner.jpeg"
+import banner from "/banner.webp"
 
 const AcademicIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -76,7 +76,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover -z-20"
         />
         
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] -z-10"></div>
+        <div className="absolute inset-0 bg-white/60 backdrop-blur-[0px] -z-10"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight">

@@ -13,6 +13,11 @@ const FacebookFeed = () => {
   const pageId = import.meta.env.VITE_PAGE_ID;
   const token = import.meta.env.VITE_TOKEN;
 
+  // Scroll hacia arriba cuando cambia la página
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -21,10 +26,6 @@ const FacebookFeed = () => {
         const url = `https://graph.facebook.com/${apiKey}/${pageId}/feed?fields=id,message,attachments{media,url,type},permalink_url,created_time,story&limit=21&access_token=${token}`;
 
         console.log('📱 Cargando publicaciones...');
-
-        console.log('API:', import.meta.env.VITE_API_VERSION);
-        console.log('PAGE:', import.meta.env.VITE_PAGE_ID);
-        console.log('TOKEN:', import.meta.env.VITE_TOKEN);
 
         const response = await fetch(url);
         const data = await response.json();
@@ -48,7 +49,7 @@ const FacebookFeed = () => {
     };
 
     fetchPosts();
-  }, []);
+  }, [apiKey, pageId, token]);
 
   if (loading) {
     return (
@@ -110,11 +111,11 @@ const FacebookFeed = () => {
 
   return (
     <div className="fb-container">
-        <header className="mb-12 text-left border-l-4 border-blue-600 pl-6">
+        <header className="mb-8 text-left border-l-4 border-blue-600 pl-6">
           <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 tracking-tight uppercase">
-            Momentos <span className="text-blue-600 font-light italic">Destacados</span>
+            Momentos <span className=" text-blue-600 font-light italic">Destacados</span>
           </h2>
-          <p className="mt-1 text-gray-500 max-w-xl text-sm md:text-base leading-snug">
+          <p className=" text-gray-500 max-w-xl text-sm md:text-base leading-snug">
             Descubre los momentos especiales que forman parte de nuestra comunidad educativa a través de nuestras publicaciones más recientes en Facebook.
           </p>
         </header>
@@ -131,6 +132,8 @@ const FacebookFeed = () => {
             <div className="fb-grid">
               {paginatedPosts.map((post, index) => {
                 const postImage = post.attachments?.data?.[0]?.media?.image?.src;
+                const postIdReal = post.id.includes('_') ? post.id.split('_')[1] : post.id;
+                const cleanMobileUrl = `https://www.facebook.com/${pageId}/posts/${postIdReal}`;
 
                 return (
                   <div key={post.id} className="fb-post" style={{ animationDelay: `${index * 0.1}s` }}>
@@ -157,7 +160,8 @@ const FacebookFeed = () => {
                             year: 'numeric'
                           })}
                         </span>
-                        <a href={post.permalink_url} target="_blank" rel="noreferrer" className="fb-post-btn">
+                        
+                        <a href={cleanMobileUrl} target="_blank" rel="noreferrer" className="fb-post-btn">
                           Ver en Facebook
                         </a>
                       </div>

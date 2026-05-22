@@ -1,9 +1,9 @@
 import { Brain, Heart, Users, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
-import desaCognitivo from '../assets/images/Desarrollo-cognitivo.jpg';
-import desaEmocional from '../assets/images/Desarrollo-emocional.jpg';
-import desaSocial from '../assets/images/Desarrollo-social.jpg';
-import desaFisico from '../assets/images/Desarrollo-fisico.jpg';
+import desaCognitivo from '../assets/images/Desarrollo_cognitivo.webp';
+import desaEmocional from '../assets/images/Desarrollo_emocional.webp';
+import desaSocial from '../assets/images/Desarrollo_social.webp';
+import desaFisico from '../assets/images/Desarrollo_fisico.webp';
 
 const pilares = [
   {
@@ -78,7 +78,7 @@ export default function FormacionIntegral() {
               className="relative flex flex-col sm:flex-row bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 pointer-events-auto"
             >
               {/* Mitad Izquierda: Imagen */}
-              <div className="relative h-48 sm:h-auto sm:w-1/2 overflow-hidden shrink-0">
+              <div className="relative h-80 sm:h-auto sm:w-1/2 overflow-hidden shrink-0">
                 <img 
                   src={pilar.imageUrl} 
                   alt={pilar.name} 

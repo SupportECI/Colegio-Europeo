@@ -79,3 +79,20 @@
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* Animación de parpadeo para el icono hamburguesa */
+@keyframes iconBlink {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  }
+  50% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 6px rgba(14, 41, 118, 0.6));
+  }
+}
+
+/* Clase para aplicar animación de parpadeo al icono hamburguesa */
+.hamburger-pulse {
+  animation: iconBlink 2s ease-in-out infinite;
+}

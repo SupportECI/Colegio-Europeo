@@ -9,6 +9,7 @@ import {
 } from '@headlessui/react'
 import navbarLogo from '../assets/images/Navbar.svg'
 import navbarLogoSmall from '../assets/images/logo.svg'
+import '../styles/navbar-animations.css'
 
 import {
   House,
@@ -50,9 +51,9 @@ export default function Navbar() {
         <div className="flex lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="rounded-xl p-2 text-gray-700 hover:bg-gray-100 active:scale-95 transition-all"
+            className="group relative rounded-lg p-2.5 hover:bg-gray-200 active:scale-95 transition-all duration-300"
           >
-            <Menu className="h-6 w-6" />
+            <Menu className="hamburger-pulse h-7 w-7 text-[#0E2976] transition-transform duration-300 group-hover:scale-110" />
           </button>
         </div>
 

@@ -1,6 +1,27 @@
 import { useState, useEffect } from 'react';
 import { ChevronRight, X, ChevronLeft } from 'lucide-react';
 
+// MATERNAL - Importa tus 5 imágenes aquí
+import maternalWebp1 from '../assets/images/Preescolar.webp';
+import maternalWebp2 from '../assets/images/Preescolar.webp';
+import maternalWebp3 from '../assets/images/Preescolar.webp';
+import maternalWebp4 from '../assets/images/Preescolar.webp';
+import maternalWebp5 from '../assets/images/Preescolar.webp';
+
+// PREESCOLAR - Importa tus 5 imágenes aquí
+import preescolarWebp1 from '../assets/images/Preescolar.webp';
+import preescolarWebp2 from '../assets/images/Preescolar.webp';
+import preescolarWebp3 from '../assets/images/Preescolar.webp';
+import preescolarWebp4 from '../assets/images/Preescolar.webp';
+import preescolarWebp5 from '../assets/images/Preescolar.webp';
+
+// PRIMARIA - Importa tus 5 imágenes aquí
+import primariaWebp1 from '../assets/images/Preescolar.webp';
+import primariaWebp2 from '../assets/images/Preescolar.webp';
+import primariaWebp3 from '../assets/images/Preescolar.webp';
+import primariaWebp4 from '../assets/images/Preescolar.webp';
+import primariaWebp5 from '../assets/images/Preescolar.webp';
+
 const Galeria = () => {
   const [categoriaActiva, setCategoriaActiva] = useState('todos');
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
@@ -36,26 +57,26 @@ const Galeria = () => {
   ];
 
   const imagenesGaleria = [
-    // MATERNAL (5
-    { id: 1, categoria: 'maternal', titulo: 'titulo 1', descripcion: 'Descubriendo texturas.', imagen: '' },
-    { id: 2, categoria: 'maternal', titulo: 'titulo 2', descripcion: 'Motricidad gruesa.', imagen: '' },
-    { id: 3, categoria: 'maternal', titulo: 'titulo 3', descripcion: 'Imaginación temprana.', imagen: '' },
-    { id: 4, categoria: 'maternal', titulo: 'titulo 4', descripcion: 'Socialización.', imagen: '' },
-    { id: 5, categoria: 'maternal', titulo: 'titulo 5', descripcion: 'Ritmo y oído.', imagen: '' },
+    // MATERNAL (5)
+    { id: 1, categoria: 'maternal', titulo: 'titulo 1', descripcion: 'Descubriendo texturas.', imagen: maternalWebp1 },
+    { id: 2, categoria: 'maternal', titulo: 'titulo 2', descripcion: 'Motricidad gruesa.', imagen: maternalWebp2 },
+    { id: 3, categoria: 'maternal', titulo: 'titulo 3', descripcion: 'Imaginación temprana.', imagen: maternalWebp3 },
+    { id: 4, categoria: 'maternal', titulo: 'titulo 4', descripcion: 'Socialización.', imagen: maternalWebp4 },
+    { id: 5, categoria: 'maternal', titulo: 'titulo 5', descripcion: 'Ritmo y oído.', imagen: maternalWebp5 },
 
     // PREESCOLAR (5)
-    { id: 6, categoria: 'preescolar', titulo: 'titulo 6', descripcion: 'Cocina divertida.', imagen: '' },
-    { id: 7, categoria: 'preescolar', titulo: 'titulo 7', descripcion: 'Curiosidad.', imagen: '' },
-    { id: 8, categoria: 'preescolar', titulo: 'titulo 8', descripcion: 'Naturaleza.', imagen: '' },
-    { id: 9, categoria: 'preescolar', titulo: 'titulo 9', descripcion: 'Folclore.', imagen: '' },
-    { id: 10, categoria: 'preescolar', titulo: 'titulo 10', descripcion: 'Bilingüismo.', imagen: '' },
+    { id: 6, categoria: 'preescolar', titulo: 'titulo 6', descripcion: 'Cocina divertida.', imagen: preescolarWebp1 },
+    { id: 7, categoria: 'preescolar', titulo: 'titulo 7', descripcion: 'Curiosidad.', imagen: preescolarWebp2 },
+    { id: 8, categoria: 'preescolar', titulo: 'titulo 8', descripcion: 'Naturaleza.', imagen: preescolarWebp3 },
+    { id: 9, categoria: 'preescolar', titulo: 'titulo 9', descripcion: 'Folclore.', imagen: preescolarWebp4 },
+    { id: 10, categoria: 'preescolar', titulo: 'titulo 10', descripcion: 'Bilingüismo.', imagen: preescolarWebp5 },
 
     // PRIMARIA (5)
-    { id: 11, categoria: 'primaria', titulo: 'titulo 11', descripcion: 'Innovación.', imagen: '' },
-    { id: 12, categoria: 'primaria', titulo: 'titulo 12', descripcion: 'Concentración.', imagen: '' },
-    { id: 13, categoria: 'primaria', titulo: 'titulo 13', descripcion: 'Lectura.', imagen: '' },
-    { id: 14, categoria: 'primaria', titulo: 'titulo 14', descripcion: 'Identidad.', imagen: '' },
-    { id: 15, categoria: 'primaria', titulo: 'titulo 15', descripcion: 'Trabajo en equipo.', imagen: '' }
+    { id: 11, categoria: 'primaria', titulo: 'titulo 11', descripcion: 'Innovación.', imagen: primariaWebp1 },
+    { id: 12, categoria: 'primaria', titulo: 'titulo 12', descripcion: 'Concentración.', imagen: primariaWebp2 },
+    { id: 13, categoria: 'primaria', titulo: 'titulo 13', descripcion: 'Lectura.', imagen: primariaWebp3 },
+    { id: 14, categoria: 'primaria', titulo: 'titulo 14', descripcion: 'Identidad.', imagen: primariaWebp4 },
+    { id: 15, categoria: 'primaria', titulo: 'titulo 15', descripcion: 'Trabajo en equipo.', imagen: primariaWebp5 }
   ];
 
   const imagenesFiltradas = categoriaActiva === 'todos'
