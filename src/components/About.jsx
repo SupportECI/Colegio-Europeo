@@ -2,7 +2,7 @@ import { GlobeAltIcon, EyeIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import PropTypes from 'prop-types';
-
+/**/
 const AboutUs = () => {
   const sections = [
     {
