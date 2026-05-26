@@ -2,25 +2,26 @@ import { useState, useEffect } from 'react';
 import { ChevronRight, X, ChevronLeft } from 'lucide-react';
 
 // MATERNAL - Importa tus 5 imágenes aquí
-import maternalWebp1 from '../assets/images/Preescolar.webp';
-import maternalWebp2 from '../assets/images/Preescolar.webp';
-import maternalWebp3 from '../assets/images/Preescolar.webp';
-import maternalWebp4 from '../assets/images/Preescolar.webp';
-import maternalWebp5 from '../assets/images/Preescolar.webp';
+import maternal1 from '../assets/images/maternal1.jpeg';
+import maternal2 from '../assets/images/maternal2.jpeg';
+import maternal3 from '../assets/images/maternal3.jpeg';
+import maternal4 from '../assets/images/maternal4.jpeg';
+import maternal5 from '../assets/images/maternal5.jpeg';
 
 // PREESCOLAR - Importa tus 5 imágenes aquí
-import preescolarWebp1 from '../assets/images/Preescolar.webp';
-import preescolarWebp2 from '../assets/images/Preescolar.webp';
-import preescolarWebp3 from '../assets/images/Preescolar.webp';
-import preescolarWebp4 from '../assets/images/Preescolar.webp';
-import preescolarWebp5 from '../assets/images/Preescolar.webp';
+import preescolar1 from '../assets/images/preescolar1.jpeg';
+import preescolar2 from '../assets/images/preescolar2.jpeg';
+import preescolar3 from '../assets/images/preescolar3.jpeg';
+import preescolar4 from '../assets/images/preescolar4.jpeg';
+import preescolar5 from '../assets/images/preescolar5.jpeg';
 
 // PRIMARIA - Importa tus 5 imágenes aquí
-import primariaWebp1 from '../assets/images/Preescolar.webp';
-import primariaWebp2 from '../assets/images/Preescolar.webp';
-import primariaWebp3 from '../assets/images/Preescolar.webp';
-import primariaWebp4 from '../assets/images/Preescolar.webp';
-import primariaWebp5 from '../assets/images/Preescolar.webp';
+import primaria1 from '../assets/images/primaria1.PNG';
+import primaria2 from '../assets/images/primaria2.png';
+import primaria3 from '../assets/images/primaria3.jpeg';
+import primaria4 from '../assets/images/primaria4.jpeg';
+import primaria5 from '../assets/images/primaria5.jpeg';  
+import primaria6 from '../assets/images/primaria6.jpeg';
 
 const Galeria = () => {
   const [categoriaActiva, setCategoriaActiva] = useState('todos');
@@ -58,25 +59,27 @@ const Galeria = () => {
 
   const imagenesGaleria = [
     // MATERNAL (5)
-    { id: 1, categoria: 'maternal', titulo: 'titulo 1', descripcion: 'Descubriendo texturas.', imagen: maternalWebp1 },
-    { id: 2, categoria: 'maternal', titulo: 'titulo 2', descripcion: 'Motricidad gruesa.', imagen: maternalWebp2 },
-    { id: 3, categoria: 'maternal', titulo: 'titulo 3', descripcion: 'Imaginación temprana.', imagen: maternalWebp3 },
-    { id: 4, categoria: 'maternal', titulo: 'titulo 4', descripcion: 'Socialización.', imagen: maternalWebp4 },
-    { id: 5, categoria: 'maternal', titulo: 'titulo 5', descripcion: 'Ritmo y oído.', imagen: maternalWebp5 },
+    { id: 1, categoria: 'maternal', imagen: maternal1 },
+    { id: 2, categoria: 'maternal', imagen: maternal2 },
+    { id: 3, categoria: 'maternal', imagen: maternal3 },
+    { id: 4, categoria: 'maternal', imagen: maternal4 },
+    { id: 5, categoria: 'maternal', imagen: maternal5 },
 
     // PREESCOLAR (5)
-    { id: 6, categoria: 'preescolar', titulo: 'titulo 6', descripcion: 'Cocina divertida.', imagen: preescolarWebp1 },
-    { id: 7, categoria: 'preescolar', titulo: 'titulo 7', descripcion: 'Curiosidad.', imagen: preescolarWebp2 },
-    { id: 8, categoria: 'preescolar', titulo: 'titulo 8', descripcion: 'Naturaleza.', imagen: preescolarWebp3 },
-    { id: 9, categoria: 'preescolar', titulo: 'titulo 9', descripcion: 'Folclore.', imagen: preescolarWebp4 },
-    { id: 10, categoria: 'preescolar', titulo: 'titulo 10', descripcion: 'Bilingüismo.', imagen: preescolarWebp5 },
+    { id: 6, categoria: 'preescolar',  imagen: preescolar1 },
+    { id: 7, categoria: 'preescolar', imagen: preescolar2 },
+    { id: 8, categoria: 'preescolar', imagen:  preescolar5},
+    { id: 9, categoria: 'preescolar', imagen: preescolar4 },
+    { id: 10, categoria: 'preescolar', imagen: preescolar3 },
 
     // PRIMARIA (5)
-    { id: 11, categoria: 'primaria', titulo: 'titulo 11', descripcion: 'Innovación.', imagen: primariaWebp1 },
-    { id: 12, categoria: 'primaria', titulo: 'titulo 12', descripcion: 'Concentración.', imagen: primariaWebp2 },
-    { id: 13, categoria: 'primaria', titulo: 'titulo 13', descripcion: 'Lectura.', imagen: primariaWebp3 },
-    { id: 14, categoria: 'primaria', titulo: 'titulo 14', descripcion: 'Identidad.', imagen: primariaWebp4 },
-    { id: 15, categoria: 'primaria', titulo: 'titulo 15', descripcion: 'Trabajo en equipo.', imagen: primariaWebp5 }
+    { id: 11, categoria: 'primaria', imagen: primaria1 },
+    { id: 12, categoria: 'primaria', imagen: primaria2 },
+    { id: 13, categoria: 'primaria', imagen: primaria3 },
+    { id: 14, categoria: 'primaria', imagen: primaria4 },
+    { id: 15, categoria: 'primaria', imagen: primaria5 },
+    { id: 16, categoria: 'primaria', imagen: primaria6 }
+
   ];
 
   const imagenesFiltradas = categoriaActiva === 'todos'

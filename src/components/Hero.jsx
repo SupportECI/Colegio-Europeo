@@ -6,6 +6,7 @@ import sep from '/Logos/SEP_Logo.svg'
 import algebraix from '/Logos/Algebraix_Escolar.png'
 import luca from "/Logos/Logo-Luca.svg"
 import banner from "/banner.webp"
+import hero from "../assets/images/hero.jpeg"
 
 const AcademicIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -68,25 +69,26 @@ const Hero = () => {
   return (
     <section id="hero" className="flex flex-col w-full hero-form-section">
 
-      <div className="relative w-full pt-20 pb-16 md:pt-50 md:pb-52 overflow-hidden border-b border-gray-200/50">
+      <div className="relative w-full pt-20 pb-16 md:pt-35 md:pb-52 overflow-hidden border-b border-gray\-200/50">
         
         <img 
-          src={banner}
+          src={hero}
           alt="Fondo Institucional" 
           className="absolute inset-0 w-full h-full object-cover -z-20"
         />
         
-        <div className="absolute inset-0 bg-white/60 backdrop-blur-[0px] -z-10"></div>
+        {/*<div className="absolute inset-0 bg-white/60 backdrop-blur-[0px] -z-10"></div>*/}
+        <div className="absolute inset-0 bg-blue-500/60 backdrop-blur-[1px] -z-10"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
             Educación Bilingüe de
-            <span className="block mt-1 md:mt-2" style={{ background: 'linear-gradient(135deg, #0E2976 0%, #1a3a7a 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span className="block mt-1 md:mt-2" style={{ color: '#FFFFFF' }}>
               Excelencia en Tuxtla Gutiérrez
             </span>
           </h1>
           <div className='flex justify-center mt-6'>
-            <p className="mx-auto text-sm md:text-base text-gray-800 leading-relaxed max-w-2xl font-medium">
+            <p className="mx-auto text-sm md:text-base text-white/80 leading-relaxed max-w-2xl font-medium">
               Educación maternal, preescolar y primaria, con un enfoque integral en el desarrollo académico, emocional y social de nuestros estudiantes desde edades tempranas.
             </p>
           </div>
