@@ -145,7 +145,7 @@ const HeroForm = () => {
           {/* Fila 2 — Email y Teléfono */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className={fieldClasses}>
-              <label className={labelClasses}>Email Institucional *</label>
+              <label className={labelClasses}>Email *</label>
               <input
                 id="email"
                 type="email"
@@ -217,8 +217,6 @@ const HeroForm = () => {
                 >
                   <option value="">Selecciona fecha</option>
                   <option value="inmediato">Inmediato</option>
-                  <option value="un_mes">En 1 mes</option>
-                  <option value="dos_tres_meses">2 a 3 meses</option>
                   <option value="proximo_ciclo">Próximo ciclo</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
