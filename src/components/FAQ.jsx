@@ -161,7 +161,7 @@ export default function FAQ() {
           <p className="text-sm text-white font-medium">
             ¿Tienes otra duda? Contáctanos directamente por{' '}
             <a
-              href="https://wa.me/529611234567?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20colegio."
+              href="https://wa.link/xiw9mi"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#29C345] cursor-pointer hover:underline font-bold"
