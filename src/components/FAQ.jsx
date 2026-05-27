@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import FloatingBubbles from "./BubbleMotion"; 
+import FloatingBubbles from "./BubbleMotion";
 
 export default function FAQ() {
   const [activo, setActivo] = useState(null);
@@ -40,10 +40,10 @@ export default function FAQ() {
 
   return (
     <section className="relative w-full py-20 bg-white overflow-hidden" id="faq">
-      
+
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none leading-[0]">
         <svg
-          className="w-full h-full block" 
+          className="w-full h-full block"
           viewBox="0 0 1440 1000"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ export default function FAQ() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        
+
         <div className="mb-14 text-center">
           <span className="text-xs uppercase tracking-[4px] text-[#0E2976] font-bold mb-3 block">Preguntas Frecuentes</span>
           <h2 className="text-3xl font-bold text-gray-950 tracking-tight sm:text-4xl">
@@ -82,16 +82,15 @@ export default function FAQ() {
           <div className="h-px w-20 bg-[#0E2976]/20 mt-8 mx-auto"></div>
         </div>
 
-        <div className="space-y-4"> 
+        <div className="space-y-4">
           {preguntas.map((item, index) => {
             const abierto = activo === index;
 
             return (
               <div
                 key={index}
-                className={`transition-all duration-300 rounded-xl bg-white/90 backdrop-blur-sm border ${
-                  abierto ? "shadow-lg border-gray-200" : "border-gray-100 hover:border-gray-200 shadow-sm"
-                }`}
+                className={`transition-all duration-300 rounded-xl bg-white/90 backdrop-blur-sm border ${abierto ? "shadow-lg border-gray-200" : "border-gray-100 hover:border-gray-200 shadow-sm"
+                  }`}
               >
                 <button
                   onClick={() => setActivo(abierto ? null : index)}
@@ -99,13 +98,12 @@ export default function FAQ() {
                 >
                   <div className="flex gap-4 items-center">
                     <div className={`h-6 w-1 rounded-full transition-colors ${abierto ? "bg-[#0E2976]" : "bg-transparent group-hover:bg-blue-200"}`} />
-                    <span className={`text-[16px] transition-colors duration-300 ${
-                      abierto ? "text-[#0E2976] font-bold" : "text-gray-700 hover:text-gray-950 font-medium"
-                    }`}>
+                    <span className={`text-[16px] transition-colors duration-300 ${abierto ? "text-[#0E2976] font-bold" : "text-gray-700 hover:text-gray-950 font-medium"
+                      }`}>
                       {item.pregunta}
                     </span>
                   </div>
-                  
+
                   <div className={`flex items-center justify-center p-2 rounded-full transition-colors ${abierto ? "bg-blue-50" : "bg-transparent"}`}>
                     <div className={`transform transition-transform duration-500 ease-out ${abierto ? "rotate-90" : ""}`}>
                       <ChevronRight
@@ -119,12 +117,11 @@ export default function FAQ() {
 
                 {/* Contenedor de Respuesta */}
                 <div
-                  className={`grid transition-all duration-500 ease-in-out overflow-hidden ${
-                    abierto ? "grid-rows-[1fr] opacity-100 bg-gray-50/40 rounded-b-xl border-t border-gray-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
+                  className={`grid transition-all duration-500 ease-in-out overflow-hidden ${abierto ? "grid-rows-[1fr] opacity-100 bg-gray-50/40 rounded-b-xl border-t border-gray-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="py-6 px-8 pl-18"> 
+                    <div className="py-6 px-8 pl-18">
                       {Array.isArray(item.respuesta) ? (
                         <div className="space-y-3">
                           {item.titulo && (
@@ -162,7 +159,16 @@ export default function FAQ() {
         {/* Sección de Contacto Directo */}
         <div className="mt-16 text-center pt-10 border-t border-gray-200">
           <p className="text-sm text-white font-medium">
-            ¿Tienes otra duda? Contáctanos directamente por <span className="text-[#29C345] cursor-pointer hover:underline">WhatsApp</span> para una atención personalizada.
+            ¿Tienes otra duda? Contáctanos directamente por{' '}
+            <a
+              href="https://wa.me/529611234567?text=Hola,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20colegio."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#29C345] cursor-pointer hover:underline font-bold"
+            >
+              WhatsApp
+            </a>{' '}
+            para una atención personalizada.
           </p>
         </div>
 

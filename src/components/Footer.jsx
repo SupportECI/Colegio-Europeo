@@ -58,8 +58,8 @@ const avisosLinks = [
 ]
 
 const socialLinks = [
-  { Icon: Facebook,      href: 'https://facebook.com/tuPagina' },
-  { Icon: Instagram,     href: 'https://instagram.com/tuPagina' }
+  { Icon: Facebook,      href: 'https://www.facebook.com/centroeducativoeuropeotux' },
+  { Icon: Instagram,     href: 'https://www.instagram.com/centroeducativoeuropeotux/' }
 ]
 
 export default function Footer() {

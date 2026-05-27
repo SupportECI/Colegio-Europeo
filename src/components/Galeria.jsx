@@ -2,26 +2,26 @@ import { useState, useEffect } from 'react';
 import { ChevronRight, X, ChevronLeft } from 'lucide-react';
 
 // MATERNAL - Importa tus 5 imágenes aquí
-import maternal1 from '../assets/images/maternal1.jpeg';
-import maternal2 from '../assets/images/maternal2.jpeg';
-import maternal3 from '../assets/images/maternal3.jpeg';
-import maternal4 from '../assets/images/maternal4.jpeg';
-import maternal5 from '../assets/images/maternal5.jpeg';
+import maternal1 from '../assets/images/maternal1.webp';
+import maternal2 from '../assets/images/maternal2.webp';
+import maternal3 from '../assets/images/maternal3.webp';
+import maternal4 from '../assets/images/maternal4.webp';
+import maternal5 from '../assets/images/maternal5.webp';
 
 // PREESCOLAR - Importa tus 5 imágenes aquí
-import preescolar1 from '../assets/images/preescolar1.jpeg';
-import preescolar2 from '../assets/images/preescolar2.jpeg';
-import preescolar3 from '../assets/images/preescolar3.jpeg';
-import preescolar4 from '../assets/images/preescolar4.jpeg';
-import preescolar5 from '../assets/images/preescolar5.jpeg';
+import preescolar1 from '../assets/images/preescolar1.webp';
+import preescolar2 from '../assets/images/preescolar2.webp';
+import preescolar3 from '../assets/images/preescolar3.webp';
+import preescolar4 from '../assets/images/preescolar4.webp';
+import preescolar5 from '../assets/images/preescolar5.webp';
 
 // PRIMARIA - Importa tus 5 imágenes aquí
-import primaria1 from '../assets/images/primaria1.PNG';
-import primaria2 from '../assets/images/primaria2.png';
-import primaria3 from '../assets/images/primaria3.jpeg';
-import primaria4 from '../assets/images/primaria4.jpeg';
-import primaria5 from '../assets/images/primaria5.jpeg';  
-import primaria6 from '../assets/images/primaria6.jpeg';
+import primaria1 from '../assets/images/primaria1.webp';
+import primaria2 from '../assets/images/primaria2.webp';
+import primaria3 from '../assets/images/primaria3.webp';
+import primaria4 from '../assets/images/primaria4.webp';
+import primaria5 from '../assets/images/primaria5.webp';  
+import primaria6 from '../assets/images/primaria6.webp';
 
 const Galeria = () => {
   const [categoriaActiva, setCategoriaActiva] = useState('todos');
