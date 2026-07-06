@@ -3,7 +3,6 @@ import HeroForm from './HeroForm';
 import { div, label } from 'framer-motion/client';
 import { number } from 'prop-types';
 import sep from '/Logos/SEP_Logo.svg'
-import algebraix from '/Logos/Algebraix_Escolar.png'
 import luca from "/Logos/Logo-Luca.svg"
 import banner from "/banner.webp"
 import hero from "../assets/images/hero.jpeg"
@@ -62,7 +61,6 @@ const Hero = () => {
 
   const logos = [
     { image: sep },
-    { image: algebraix },
     { image: luca },
   ];
 
@@ -82,7 +80,7 @@ const Hero = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
-            Educación Bilingüe de
+            Educación de
             <span className="block mt-1 md:mt-2" style={{ color: '#FFFFFF' }}>
               Excelencia en Tuxtla Gutiérrez
             </span>

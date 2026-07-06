@@ -34,7 +34,7 @@ export default function FAQ() {
     },
     {
       pregunta: "¿Cuál es el enfoque pedagógico de la institución?",
-      respuesta: "Nuestro enfoque es bilingüe, enseñamos matemáticas con el método Singapur, contamos con plataformas con microlearning & A.I."
+      respuesta: "Nuestro enfoque es inmersivo en el inglés, enseñamos matemáticas con el método Singapur, contamos con plataformas con microlearning & A.I."
     },
   ];
 

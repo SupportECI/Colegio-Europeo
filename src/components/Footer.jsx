@@ -41,7 +41,6 @@ const nivelesLinks = [
   { label: 'Maternal',             href: '#niveles' },
   { label: 'Preescolar',           href: '#niveles' },
   { label: 'Primaria',             href: '#niveles' },
-  { label: 'Sistema Bilingüe',     href: '#sistema' }
 ]
 
 const institucionLinks = [
@@ -53,8 +52,8 @@ const institucionLinks = [
 
 const avisosLinks = [
   { label: 'Reglamento Escolar',   href: '/reglamento' },
-  { label: 'Términos y Condiciones',       href: '/costos' },
-  { label: 'Aviso de Privacidad', href: '/plataforma' },
+  { href: '/costos' },
+  { label: 'Noticias', href: '/plataforma' },
 ]
 
 const socialLinks = [
@@ -96,7 +95,7 @@ export default function Footer() {
                 alt="Logo Centro Educativo Europeo" 
               />
               <p className="text-sm text-white/70 mt-1 leading-relaxed">
-                Formando líderes con valores, excelencia académica y un sistema bilingüe integral desde hace más de 10 años en Chiapas.
+                Formando líderes con valores, excelencia académica y un sistema  integral desde hace más de 10 años en Chiapas.
               </p>
             </div>
 
@@ -173,7 +172,7 @@ export default function Footer() {
           {/* AVISOS Y LEGAL */}
           <motion.div variants={itemVariants}>
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">
-              Avisos y Legal
+              Avisos
             </h4>
             <ul className="space-y-4">
               {avisosLinks.map(({ label, href, modalId }) => (
@@ -203,6 +202,8 @@ export default function Footer() {
             className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-white/50"
           >
             <p>© {new Date().getFullYear()} Centro Educativo Europeo. Todos los derechos reservados.</p>
+            
+            {/* Botones para Avisos de privacidad comentamos para futuro uso
             <div className="flex gap-4">
               <button id='terminos' 
                 onClick={() => setModalType('terminos')} 
@@ -210,13 +211,15 @@ export default function Footer() {
               >
                 Términos y Condiciones
               </button>
+
               <button id='privacidad'
                 onClick={() => setModalType('privacidad')} 
                 className="hover:text-white transition underline underline-offset-4"
               >
                 Aviso de Privacidad
               </button>
-            </div>
+            </div> */}
+
           </motion.div>
         </div>
       </div>

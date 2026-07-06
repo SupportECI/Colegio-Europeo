@@ -46,11 +46,11 @@ export default function SistemaBilingueexcelencia() {
           </span>
 
           <h2 className="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900">
-            Sistema Bilingüe de Excelencia
+            Sistema de Inmersión en el Inglés 
           </h2>
 
           <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Formamos estudiantes bilingües capaces de desenvolverse en un entorno global,
+            Formamos estudiantes capaces de desenvolverse en un entorno global,
             combinando aprendizaje natural, tecnología y excelencia académica.
           </p>
         </motion.div>

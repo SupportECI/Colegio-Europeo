@@ -63,8 +63,8 @@ const posts = [
       { icon: <Brain size={12} />, text: "Estimulación", color: "bg-cyan-50 text-cyan-400" },
       { icon: <Star size={12} />, text: "Pensamiento Lógico", color: "bg-yellow-50 text-yellow-400" }
     ],
-    description: "Preparación académica y social completa con enfoque bilingüe. Desarrollamos habilidades de lectoescritura y pensamiento matemático.",
-    benefits: ["Preparación a programa bilingüe", "Lectoescritura en ambos idiomas", "Pensamiento lógico-matemático", "Preparación para primaria", "Habilidades artísticas y deportivas"],
+    description: "Preparación académica y social completa con enfoque inmersivo en el inglés. Desarrollamos habilidades de lectoescritura y pensamiento matemático.",
+    benefits: ["Preparación a programa inmersivo", "Lectoescritura en ambos idiomas", "Pensamiento lógico-matemático", "Preparación para primaria", "Habilidades artísticas y deportivas"],
     includes: ["Libros y materiales didácticos", "Clases de inglés diarias", "Educación física y danza", "Talleres de ciencia y tecnología", "Comedor supervisado", "Eventos culturales y deportivos"],
     stats: { schedule: "7:30 - 14:15", capacity: "Máx. 15" },
     imageUrl: preescolarWebp,
@@ -81,14 +81,14 @@ const posts = [
       modalIcon: "bg-slate-900 text-white",
     },
     quickInfo: [
-      { icon: <Languages size={12} />, text: "Bilingüe", color: "bg-rose-50 text-rose-400" },
+      { icon: <Languages size={12} />, text: "inglés", color: "bg-rose-50 text-rose-400" },
       { icon: <Activity size={12} />, text: "Finanzas", color: "bg-violet-50 text-violet-400" },
       { icon: <Shield size={12} />, text: "Liderazgo", color: "bg-sky-50 text-sky-400" },
       { icon: <Star size={12} />, text: "Ciencias", color: "bg-green-50 text-green-400" }
     ],
-    description: "Educación integral con excelencia académica bilingüe. Preparamos estudiantes con pensamiento crítico y dominio del inglés.",
+    description: "Educación integral con excelencia académica inmersiva en el inglés. Preparamos estudiantes con pensamiento crítico y dominio del inglés.",
     benefits: ["Pensamiento crítico y creativo", "Uso de tecnología educativa", "Liderazgo y Finanzas", "Preparación para secundaria", "Constancia de nivel de Inglés (MCER)"],
-    includes: ["Materiales y libros bilingües", "50% de clases en inglés", "Plataformas Educativas", "Educación física y artes", "Matemáticas con Método Singapur"],
+    includes: ["Materiales y libros", "50% de clases en inglés", "Plataformas Educativas", "Educación física y artes", "Matemáticas con Método Singapur"],
     stats: { schedule: "7:30 - 14:30", capacity: "Máx. 18" },
     imageUrl: primariaWebp,
   },

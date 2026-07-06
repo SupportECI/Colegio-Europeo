@@ -3,7 +3,7 @@ import FacebookFeed from './FacebookFeed';
 import '../styles/facebook-feed.css';
 
 const ExperiencesGrid = () => {
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' o 'facebook'
+  const [viewMode, setViewMode] = useState('grid'); // 
   
   const experiences = [
     {

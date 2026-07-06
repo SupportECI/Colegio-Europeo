@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 
 const features = [
   { 
-    name: 'Sistema Bilingüe', 
+    name: 'Sistema Inmersivo', 
     description: 'Educación en español e inglés desde temprana edad para desarrollo completo del lenguaje.', 
     icon: <Globe className="h-6 w-6 text-blue-600" />,
     bgColor: 'bg-blue-50'

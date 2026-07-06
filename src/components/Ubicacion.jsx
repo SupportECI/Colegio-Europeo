@@ -107,7 +107,7 @@ export default function UbicacionColegio() {
                 
                 {/* Botón Principal (Se mantiene con tu diseño original, pero relativo para estar por encima del resplandor) */}
                 <a
-                  href="https://maps.app.goo.gl/PK4smuRRSRFh5qEN6"
+                  href="https://maps.app.goo.gl/SkwXQ6rQTXFVAfs96"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-flex items-center gap-2 bg-[#0E2976] text-white px-6 py-3.5 rounded-xl text-xs font-bold transition-all shadow-lg active:scale-95"
