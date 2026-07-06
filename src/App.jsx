@@ -43,13 +43,13 @@ function App() {
           }
         }, 100);
       }
-    };
+    }; 
 
     window.addEventListener('hashchange', handleHashChange);
     handleHashChange(); 
 
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  }, []); 
 
   return (
     <>

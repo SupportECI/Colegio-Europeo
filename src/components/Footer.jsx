@@ -52,13 +52,13 @@ const institucionLinks = [
 
 const avisosLinks = [
   { label: 'Reglamento Escolar',   href: '/reglamento' },
-  { href: '/costos' },
+  { label: 'Costos', href: '/costos' },
   { label: 'Noticias', href: '/plataforma' },
 ]
 
 const socialLinks = [
-  { Icon: Facebook,      href: 'https://www.facebook.com/centroeducativoeuropeotux' },
-  { Icon: Instagram,     href: 'https://www.instagram.com/centroeducativoeuropeotux/' }
+  { Icon: Facebook,      href: 'https://www.facebook.com/centroeducativoeuropeotux', name: 'facebook' },
+  { Icon: Instagram,     href: 'https://www.instagram.com/centroeducativoeuropeotux/', name: 'instagram' }
 ]
 
 export default function Footer() {
@@ -123,9 +123,9 @@ export default function Footer() {
             </div>
 
             <div className="flex gap-2 mt-6">
-              {socialLinks.map(({ Icon, href }, i) => (
+              {socialLinks.map(({ Icon, href, name }) => (
                 <a
-                  key={i}
+                  key={name}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"

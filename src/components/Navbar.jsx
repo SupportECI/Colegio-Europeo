@@ -22,7 +22,7 @@ import {
 
 const navigation = [
   { name: 'Inicio', href: '/', icon: House },
-  { name: 'Experiencias', href: '#experiencias', icon: PersonStanding },
+  /*{ name: 'Experiencias', href: '#experiencias', icon: PersonStanding },*/
   { name: 'Galería', href: '#galeria', icon: ImageIcon },
   { name: 'Nosotros', href: '#nosotros', icon: Building2 }
 ]
