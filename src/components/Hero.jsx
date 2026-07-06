@@ -1,10 +1,7 @@
 import React from 'react';
 import HeroForm from './HeroForm';
-import { div, label } from 'framer-motion/client';
-import { number } from 'prop-types';
 import sep from '/Logos/SEP_Logo.svg'
 import luca from "/Logos/Logo-Luca.svg"
-import banner from "/banner.webp"
 import hero from "../assets/images/hero.jpeg"
 
 const AcademicIcon = () => (
@@ -75,7 +72,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover -z-20"
         />
         
-        {/*<div className="absolute inset-0 bg-white/60 backdrop-blur-[0px] -z-10"></div>*/}
+        {/*<div className="absolute inset-0 bg-white/60 backdrop-blur-[0px] -z-10"></div> 1*/}
         <div className="absolute inset-0 bg-blue-500/60 backdrop-blur-[1px] -z-10"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center">
