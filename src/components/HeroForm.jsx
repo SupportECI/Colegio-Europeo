@@ -40,6 +40,14 @@ const HeroForm = () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       mostrarAlertaExito(formData);
       
+      // Cambio para envio del formulario para las etiquetas de google
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'formulario_enviado',
+        form_name: 'admision_centro_educativo_europeo'
+      });
+      // Fin del cambio 
+
       // Enviar a WhatsApp con los datos del formulario
       setTimeout(() => {
         enviarFormulario(formData);
