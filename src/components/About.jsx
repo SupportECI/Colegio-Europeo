@@ -67,7 +67,7 @@ const AboutUs = () => {
             Centro Educativo Europeo
           </h1>
           <p className="text-base md:text-lg text-gray-600 md:text-center max-w-3xl leading-relaxed">
-            Es una empresa fundada y establecida en la ciudad de Tuxtla Gutiérrez, Chiapas para atender las necesidades crecientes de los padres en la educación de sus hijos en el área maternal, preescolar y primaria con más de 10 años en el área educativa.
+            Es una institución fundada y establecida en la ciudad de Tuxtla Gutiérrez, Chiapas para atender las necesidades crecientes de los padres en la educación de sus hijos en el área maternal, preescolar y primaria con más de 10 años en el área educativa.
           </p>
         </div>
 

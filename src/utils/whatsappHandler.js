@@ -87,7 +87,7 @@ function enviarFormulario(formData) {
   }
 
   // Construir el mensaje con los datos del formulario (URL encoded)
-  const textoMensaje = `Hola, me gustaría obtener información sobre Centro Educativo Europeo, mis datos son:%0ANombre: ${formData.nombre}%0AApellido: ${formData.apellido}%0ACorreo electrónico: ${formData.email}%0AWhatsApp: ${formData.telefono}%0ANivel de interés: ${formData.nivel}%0AInicio: ${formData.disponibilidad}`;
+  const textoMensaje = `¡Hola! Vi la página web de su colegio, y me interesa recibir más información, mis datos son:%0ANombre: ${formData.nombre}%0AApellido: ${formData.apellido}%0ACorreo electrónico: ${formData.email}%0AWhatsApp: ${formData.telefono}%0ANivel de interés: ${formData.nivel}%0AInicio: ${formData.disponibilidad}`;
 
   // Determinar la URL según el dispositivo
   let mensajeURL;
